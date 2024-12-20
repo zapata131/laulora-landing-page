@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="mediaquieries.css">
+    <script src="https://kit.fontawesome.com/d4c858243e.js" crossorigin="anonymous"></script>
+    <title>Tips for your trip in Munich | Laura Navarro Lora</title>
+</head>
+<body>
+<!-- Starts the navigation and hamburger menu -->
+    <nav id="desktop-nav">
+        <div class="logo">Laura Navarro</div>
+        <div>
+          <ul class="nav-links">
+            <li><a href="index.html">About</a></li>
+            <li><a href="resume.html">Resume</a></li>
+            <li><a href="munich-tips.html">Munich tips</a></li>
+          </ul>
+        </div>
+      </nav>
+      <nav id="hamburger-nav">
+        <div class="logo">Laura Navarro</div>
+        <div class="hamburger-menu">
+          <div class="hamburger-icon" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="menu-links">
+            <li><a href="index.html" onclick="toggleMenu()">About</a></li>
+            <li><a href="resume.html" onclick="toggleMenu()">Resume</a></li>
+            <li><a href="munich-tips.html" onclick="toggleMenu()">Munich tips</a></li>
+          </div>
+        </div>
+      </nav>
+<!-- Starts the content of the page -->
+        <!-- <div class="page__title">
+            <h1 id="page-title-text">Tips for your trip in Munich</h1>
+            <div class="page__title-pic-container">
+                <img src="./img/laura-small.png" alt="Laura Navarro profile picture">
+                <p class="page__text__byline">by a local</p>
+            </div>
+        </div>
+
+        <div class="page__text">
+            <section>
+                <h2>
+                    Section with specific type of questions
+                </h2>
+                <h3>
+                    Question 1.1
+                </h3>
+                <p class="page__answer">
+                    Answer to the question 1.1. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolore asperiores nemo nihil esse ratione id, tenetur molestias modi voluptatem, placeat cumque minima, nobis perspiciatis repudiandae eaque reprehenderit hic? Nam, ipsam.
+                </p>
+                <h3>
+                    Question 1.2
+                </h3>
+                <p class="page__answer">
+                    Answer to the question 1.2. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolore asperiores nemo nihil esse ratione id, tenetur molestias modi voluptatem, placeat cumque minima, nobis perspiciatis repudiandae eaque reprehenderit hic? Nam, ipsam.
+                </p>
+            </section>
+        </div> -->
+<!-- New content -->
+<div class="page__title">
+    <h1 id="page-title-text">Tips for your trip in Munich</h1>
+    <div class="page__title-pic-container">
+        <img src="./img/laura-small.png" alt="Laura Navarro profile picture">
+        <p class="page__text__byline">by a local</p>
+    </div>
+</div>
+
+<div class="page__text">
+    <section class="page__section">
+        <h2>Section with specific type of questions</h2>
+
+        <div class="question-container">
+            <button class="question-toggle">
+                <span class="indicator">▶</span>Question 1.1
+            </button>
+            <div class="answer-container">
+                <p class="page__answer">
+                    Answer to the question 1.1. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolore asperiores nemo nihil esse ratione id, tenetur molestias modi voluptatem, placeat cumque minima, nobis perspiciatis repudiandae eaque reprehenderit hic? Nam, ipsam.
+                </p>
+            </div>
+        </div>
+
+        <div class="question-container">
+            <button class="question-toggle">
+                <span class="indicator">▶</span>Question 1.2
+            </button>
+            <div class="answer-container">
+                <p class="page__answer">
+                    Answer to the question 1.2. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolore asperiores nemo nihil esse ratione id, tenetur molestias modi voluptatem, placeat cumque minima, nobis perspiciatis repudiandae eaque reprehenderit hic? Nam, ipsam.
+                </p>
+            </div>
+        </div>
+    </section>
+</div>
+
+    <script src="scrips.js"></script>
+</body>
+</html>
