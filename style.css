@@ -124,7 +124,7 @@
 }
 /* Kawaii Stickers */
 [data-theme="kawaii"] .hero::before {
-  content: "🐱";
+  content: "🐰";
   position: absolute;
   top: 15%;
   left: 5%;
