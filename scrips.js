@@ -27,10 +27,41 @@ function updateThemeIcon(theme) {
     if (theme === "dark") {
         themeIcon.classList.remove("fa-moon");
         themeIcon.classList.add("fa-sun");
+    } else if (theme === "kawaii") {
+        themeIcon.className = "fa-solid fa-wand-magic-sparkles";
     } else {
         themeIcon.classList.remove("fa-sun");
         themeIcon.classList.add("fa-moon");
     }
+}
+
+// Kawaii Easter Egg
+const easterEgg = document.getElementById("easter-egg");
+let eggClicks = 0;
+let eggTimeout;
+
+if (easterEgg) {
+    easterEgg.addEventListener("click", () => {
+        eggClicks++;
+        clearTimeout(eggTimeout);
+
+        if (eggClicks === 3) {
+            const currentTheme = html.getAttribute("data-theme");
+            const newTheme = currentTheme === "kawaii" ? (localStorage.getItem("theme") || "light") : "kawaii";
+
+            html.setAttribute("data-theme", newTheme);
+            updateThemeIcon(newTheme);
+            eggClicks = 0;
+
+            if (newTheme === "kawaii") {
+                console.log("🌸 Kawaii Mode Activated! 🌸");
+            }
+        } else {
+            eggTimeout = setTimeout(() => {
+                eggClicks = 0;
+            }, 500); // Reset if not clicked within 500ms
+        }
+    });
 }
 
 // Close menu when clicking a link
