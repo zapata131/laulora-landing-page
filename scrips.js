@@ -106,7 +106,7 @@ document.addEventListener("mousemove", (e) => {
     if (document.documentElement.getAttribute("data-theme") !== "kawaii") return;
 
     const sparkle = document.createElement("span");
-    const symbols = ["✨", "🐾", "🌸", "☁️"];
+    const symbols = ["✨", "🌸"];
     sparkle.innerHTML = symbols[Math.floor(Math.random() * symbols.length)];
     sparkle.style.position = "fixed";
     sparkle.style.left = e.clientX + "px";
