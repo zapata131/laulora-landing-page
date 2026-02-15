@@ -124,7 +124,7 @@
 }
 /* Kawaii Stickers */
 [data-theme="kawaii"] .hero::before {
-  content: "🐰";
+  content: "😻";
   position: absolute;
   top: 15%;
   left: 5%;
@@ -137,11 +137,11 @@
   content: "☁️";
   position: absolute;
   top: 10%;
-    right: 5%;
+  right: 5%;
   font-size: 4rem;
   animation: kawaii-float 5s ease-in-out infinite;
   animation-delay: 1s;
-    opacity: 0.4;
+  opacity: 0.4;
   }
   
   [data-theme="kawaii"] .hero-content::before {
@@ -156,7 +156,7 @@
   }
   
   [data-theme="kawaii"] .hero-content::after {
-    content: "🐱";
+  content: "😸";
     position: absolute;
     bottom: 15%;
     right: 15%;
@@ -164,18 +164,27 @@
     animation: kawaii-float 3.5s ease-in-out infinite;
     animation-delay: 1.5s;
     opacity: 0.5;
-  }
-  
-  [data-theme="kawaii"] .hero-img-container::before {
-    content: "☁️";
-    position: absolute;
-    top: -10%;
-    right: -10%;
-    font-size: 2.5rem;
-    animation: kawaii-float 6s ease-in-out infinite;
+}
+[data-theme="kawaii"] .hero-img-container::before {
+  content: "☁️";
+  position: absolute;
+  top: -10%;
+  right: -10%;
+  font-size: 2.5rem;
+  animation: kawaii-float 6s ease-in-out infinite;
   opacity: 0.4;
 }
 
+[data-theme="kawaii"] .hero-img-container::after {
+  content: "🐱";
+  position: absolute;
+  top: 5%;
+  right: 25%;
+  font-size: 2rem;
+  animation: kawaii-float 4s ease-in-out infinite;
+  animation-delay: 2s;
+  opacity: 0.5;
+}
 .hero-socials a:hover {
   transform: scale(1.2) rotate(10deg);
   color: var(--secondary-color) !important;
