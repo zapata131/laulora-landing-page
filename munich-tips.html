@@ -3,102 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Munich Local Tips | Laura Navarro Lora</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="mediaquieries.css">
     <script src="https://kit.fontawesome.com/d4c858243e.js" crossorigin="anonymous"></script>
-    <title>Tips for your trip in Munich | Laura Navarro Lora</title>
 </head>
 <body>
-<!-- Starts the navigation and hamburger menu -->
-    <nav id="desktop-nav">
-        <div class="logo">Laura Navarro</div>
-        <div>
-          <ul class="nav-links">
-            <li><a href="index.html">About</a></li>
-            <li><a href="resume.html">Resume</a></li>
-            <li><a href="munich-tips.html">Munich tips</a></li>
-          </ul>
-        </div>
-      </nav>
-      <nav id="hamburger-nav">
-        <div class="logo">Laura Navarro</div>
-        <div class="hamburger-menu">
-          <div class="hamburger-icon" onclick="toggleMenu()">
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
-          <div class="menu-links">
-            <li><a href="index.html" onclick="toggleMenu()">About</a></li>
-            <li><a href="resume.html" onclick="toggleMenu()">Resume</a></li>
-            <li><a href="munich-tips.html" onclick="toggleMenu()">Munich tips</a></li>
-          </div>
-        </div>
-      </nav>
-<!-- Starts the content of the page -->
-        <!-- <div class="page__title">
-            <h1 id="page-title-text">Tips for your trip in Munich</h1>
-            <div class="page__title-pic-container">
-                <img src="./img/laura-small.png" alt="Laura Navarro profile picture">
-                <p class="page__text__byline">by a local</p>
-            </div>
-        </div>
-
-        <div class="page__text">
-            <section>
-                <h2>
-                    Section with specific type of questions
-                </h2>
-                <h3>
-                    Question 1.1
-                </h3>
-                <p class="page__answer">
-                    Answer to the question 1.1. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolore asperiores nemo nihil esse ratione id, tenetur molestias modi voluptatem, placeat cumque minima, nobis perspiciatis repudiandae eaque reprehenderit hic? Nam, ipsam.
-                </p>
-                <h3>
-                    Question 1.2
-                </h3>
-                <p class="page__answer">
-                    Answer to the question 1.2. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolore asperiores nemo nihil esse ratione id, tenetur molestias modi voluptatem, placeat cumque minima, nobis perspiciatis repudiandae eaque reprehenderit hic? Nam, ipsam.
-                </p>
-            </section>
-        </div> -->
-<!-- New content -->
-<div class="page__title">
-    <h1 id="page-title-text">Tips for your trip in Munich</h1>
-    <div class="page__title-pic-container">
-        <img src="./img/laura-small.png" alt="Laura Navarro profile picture">
-        <p class="page__text__byline">by a local</p>
-    </div>
-</div>
-
-<div class="page__text">
-    <section class="page__section">
-        <h2>Section with specific type of questions</h2>
-
-        <div class="question-container">
-            <button class="question-toggle">
-                <span class="indicator">▶</span>Question 1.1
+    <nav>
+        <div class="nav-container">
+            <div class="logo">Laura Navarro Lora</div>
+            <ul class="nav-links">
+                <li><a href="index.html">About</a></li>
+                <li><a href="resume.html">Resume</a></li>
+                <li><a href="munich-tips.html" class="active">Munich Tips</a></li>
+                </ul>
+            <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+                <i class="fa-solid fa-moon"></i>
             </button>
-            <div class="answer-container">
-                <p class="page__answer">
-                    Answer to the question 1.1. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolore asperiores nemo nihil esse ratione id, tenetur molestias modi voluptatem, placeat cumque minima, nobis perspiciatis repudiandae eaque reprehenderit hic? Nam, ipsam.
-                </p>
+        </div>
+    </nav>
+    <header class="section" style="padding-bottom: 0;">
+        <div class="section-title">
+            <h2>A Local's Guide to Munich</h2>
+            <p>Curated tips for Wombat's City Hostel guests and Munich explorers.</p>
+        </div>
+    </header>
+    
+    <main class="section">
+        <div class="tips-grid">
+            <!-- Tip 1 -->
+            <div class="tip-card">
+                <h3>📍 Arriving at Hauptbahnhof</h3>
+                <p>Welcome to Munich! The hostel is just a 5-minute walk from the station. Pro tip: Use the North exit to
+                    avoid the busiest crowds.</p>
+                <a href="https://goo.gl/maps/example" target="_blank"
+                    style="color: var(--accent-color); font-weight: 600;">View on Map →</a>
+            </div>
+    <!-- Tip 2 -->
+    <div class="tip-card">
+        <h3>🍺 Beer Gardens & Food</h3>
+        <p>Augustiner-Keller is nearby and a total classic. Don't forget to try a Brezn (pretzel) with Obatzda cheese!</p>
+        <a href="https://www.tripadvisor.com/example-affiliate" target="_blank"
+            style="color: var(--secondary-color); font-weight: 600;">Book a Food Tour →</a>
+            </div>
+    <!-- Tip 3 -->
+    <div class="tip-card">
+        <h3>🚇 Getting Around</h3>
+        <p>Buy a "Group Day Ticket" if you're 2+ people—it's much cheaper. Use the MVGO app for real-time schedules.</p>
+            </div>
+    <!-- Tip 4 -->
+    <div class="tip-card">
+        <h3>🏰 Essential Sights</h3>
+        <p>Marienplatz is a must, but if you want a view, climb St. Peter's Church (Alter Peter). It's cheaper than the
+            Rathaus lift!</p>
+            </div>
+            <!-- Tip 5 -->
+            <div class="tip-card">
+                <h3>🥨 Local Secrets</h3>
+                <p>The English Garden is bigger than Central Park. Head to the Eisbachwelle to watch surfers in the middle of the
+                    city!</p>
+            </div>
+            <!-- Tip 6 -->
+            <div class="tip-card">
+                <h3>🛍️ Shopping & Essentials</h3>
+                <p>Kaufland near the station is great for budget groceries. Most shops are closed on Sundays, so plan ahead!</p>
             </div>
         </div>
-
-        <div class="question-container">
-            <button class="question-toggle">
-                <span class="indicator">▶</span>Question 1.2
-            </button>
-            <div class="answer-container">
-                <p class="page__answer">
-                    Answer to the question 1.2. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolore asperiores nemo nihil esse ratione id, tenetur molestias modi voluptatem, placeat cumque minima, nobis perspiciatis repudiandae eaque reprehenderit hic? Nam, ipsam.
-                </p>
+    
+        <section style="margin-top: 4rem; padding: 2rem; background: var(--white); border-radius: 1rem; text-align: center;">
+            <h3 style="font-family: var(--font-heading); font-size: 1.8rem; color: var(--primary-color);">Staying at Wombat's?
+            </h3>
+            <p>I'm often at the reception! Come say hi and let me know if you need more personalized recommendations.</p>
+            <div style="margin-top: 2rem;">
+                <a href="https://www.booking.com/example-affiliate" class="btn btn-primary">Book Your Stay</a>
             </div>
-        </div>
-    </section>
-</div>
+        </section>
+    </main>
+    
+    <footer style="text-align: center; padding: 2rem; background: var(--primary-color); color: white; margin-top: 4rem;">
+        <p>&copy; 2026 Laura Navarro Lora | Helping you discover Munich.</p>
+    </footer>
 
     <script src="scrips.js"></script>
 </body>

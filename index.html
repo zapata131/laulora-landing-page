@@ -3,64 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laura Navarro Lora | Sales Operations & Munich Insider</title>
+    <meta name="description" content="Personal website of Laura Navarro, Sales Operations Analyst and Munich local guide.">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="mediaquieries.css">
     <script src="https://kit.fontawesome.com/d4c858243e.js" crossorigin="anonymous"></script>
-    <title>Laura Navarro Lora</title>
 </head>
 <body>
-    <nav id="desktop-nav">
-        <div class="logo">Laura Navarro</div>
-        <div>
-          <ul class="nav-links">
-            <li><a href="index.html">About</a></li>
-            <li><a href="resume.html">Resume</a></li>
-            <li><a href="munich-tips.html">Munich tips</a></li>
-          </ul>
-        </div>
-      </nav>
-      <nav id="hamburger-nav">
-        <div class="logo">Laura Navarro</div>
-        <div class="hamburger-menu">
-          <div class="hamburger-icon" onclick="toggleMenu()">
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
-          <div class="menu-links">
-            <li><a href="index.html" onclick="toggleMenu()">About</a></li>
-            <li><a href="resume.html" onclick="toggleMenu()">Resume</a></li>
-            <li><a href="munich-tips.html" onclick="toggleMenu()">Munich tips</a></li>
-          </div>
-        </div>
-      </nav>
-      <section id="profile">
-        <div class="section__pic-container">
-            <img src="./img/laura-small.png" alt="Laura Navarro profile picture">
-        </div>
-        <div class="section__text">
-            <p class="section__text__p1">Hi there!, I'm</p>
-            <h1 class="title">Laura Navarro Lora</h1>
-            <p class="section__text__p2">Sales Operations Manager</p>
-            <div id="socials-container">
-                <a href="https://www.linkedin.com/in/laura-navarro-lora-4a9a7465/">  
-                    <i class="fa-brands fa-linkedin"></i>
-                </a>
-                <a href="https://www.instagram.com/laura.n.lora/">
-                    <i class="fa-brands fa-square-instagram"></i>
-                </a>
-              </div>
-              <div class="section__hero-text">
-                <p>
-                    Hi there! I'm Laura, a Sales Operations Analyst who's currently living and exploring the beautiful city of Munich. I love diving into data and helping teams be their best. My work is all about finding smart solutions and making sure everyone feels supported along the way.
-                </p>
-                <p>
-                    I'm always eager to learn and try new things, which is why I'm currently working as a hostel receptionist. It's a fun way to practice my German and meet people from all over the world. When I'm not working, I enjoy checking out local spots, trying different foods, and geeking out over Japanese language and culture, K-pop music, and more.
-    
-                </p>
+    <nav>
+        <div class="nav-container">
+            <div class="logo">Laura Navarro Lora</div>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">About</a></li>
+                <li><a href="resume.html">Resume</a></li>
+                <li><a href="munich-tips.html">Munich Tips</a></li>
+                </ul>
+            <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+                <i class="fa-solid fa-moon"></i>
+            </button>
+            <div class="hamburger" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
         </div>
-      </section>
+        </nav>
+        
+        <main>
+            <section class="hero">
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <h1>Hi, I'm Laura Navarro Lora</h1>
+                        <p>A Sales Operations Analyst with a passion for data, efficiency, and people. Currently based in
+                            <strong>Munich</strong>, exploring the city and sharing local tips from the heart of Bavaria.
+                        </p>
+                        <div class="cta-buttons">
+                            <a href="resume.html" class="btn btn-primary">View My Resume</a>
+                            <a href="munich-tips.html" class="btn btn-outline">Munich Guide</a>
+                        </div>
+                    </div>
+                    <div class="hero-img-container">
+                        <img src="./img/laura-small.png" alt="Laura Navarro" class="hero-img">
+                    </div>
+                </div>
+        </section>
+        
+        <section class="section">
+            <div class="section-title">
+                <h2>Connect with Me</h2>
+            </div>
+            <div id="socials-container" style="display: flex; justify-content: center; gap: 2rem; font-size: 2.5rem;">
+                <a href="https://www.linkedin.com/in/laura-navarro-lora-4a9a7465/" style="color: var(--primary-color);">
+                    <i class="fa-brands fa-linkedin"></i>
+                </a>
+                <a href="https://www.instagram.com/laura.n.lora/" style="color: var(--primary-color);">
+                    <i class="fa-brands fa-square-instagram"></i>
+                </a>
+            </div>
+        </section>
+    </main>
+
     <script src="scrips.js"></script>
-</body>`
+</body>
 </html>
