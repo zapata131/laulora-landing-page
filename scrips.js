@@ -28,7 +28,7 @@ function updateThemeIcon(theme) {
         themeIcon.classList.remove("fa-moon");
         themeIcon.classList.add("fa-sun");
     } else if (theme === "kawaii") {
-        themeIcon.className = "fa-solid fa-wand-magic-sparkles";
+        themeIcon.className = "fa-solid fa-cat";
     } else {
         themeIcon.classList.remove("fa-sun");
         themeIcon.classList.add("fa-moon");
@@ -105,8 +105,8 @@ function toggleMenu() {
 document.addEventListener("mousemove", (e) => {
     if (document.documentElement.getAttribute("data-theme") !== "kawaii") return;
 
-    const sparkle = document.createElement("span");
-    sparkle.innerHTML = "✨";
+    const symbols = ["✨", "🐾", "🌸", "☁️"];
+    sparkle.innerHTML = symbols[Math.floor(Math.random() * symbols.length)];
     sparkle.style.position = "fixed";
     sparkle.style.left = e.clientX + "px";
     sparkle.style.top = e.clientY + "px";
