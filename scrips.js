@@ -100,3 +100,29 @@ function toggleMenu() {
     if (navLinks) navLinks.classList.toggle("open");
     if (hamburger) hamburger.classList.toggle("open");
 }
+
+// Sparkle Trail for Kawaii Mode
+document.addEventListener("mousemove", (e) => {
+    if (document.documentElement.getAttribute("data-theme") !== "kawaii") return;
+
+    const sparkle = document.createElement("span");
+    sparkle.innerHTML = "✨";
+    sparkle.style.position = "fixed";
+    sparkle.style.left = e.clientX + "px";
+    sparkle.style.top = e.clientY + "px";
+    sparkle.style.pointerEvents = "none";
+    sparkle.style.fontSize = Math.random() * 20 + 10 + "px";
+    sparkle.style.zIndex = "9999";
+    sparkle.style.transition = "all 1s ease-out";
+
+    document.body.appendChild(sparkle);
+
+    setTimeout(() => {
+        sparkle.style.opacity = "0";
+        sparkle.style.transform = `translateY(${(Math.random() - 0.5) * 100}px) translateX(${(Math.random() - 0.5) * 100}px) scale(0)`;
+    }, 10);
+
+    setTimeout(() => {
+        sparkle.remove();
+    }, 1000);
+});
