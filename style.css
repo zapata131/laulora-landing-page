@@ -35,9 +35,15 @@
   /* Neutral muted gray */
   --white: #0b2d23;
   /* Forest green cards */
+  --card-bg: #0b2d23;
+    --border-color: rgba(212, 175, 55, 0.1);
   --shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
 }
 
+:root {
+  --card-bg: #ffffff;
+  --border-color: rgba(0, 0, 0, 0.05);
+}
 [data-theme="kawaii"] {
   --primary-color: #ff9aa2;
   --secondary-color: #ffdac1;
@@ -516,6 +522,476 @@ nav {
   margin-bottom: 1rem;
 }
 
+/* Interactive Cards for Munich Guide */
+.interactive-card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  border: 1px solid var(--border-color);
+}
+
+.tip-card-link {
+  display: block;
+  height: 100%;
+}
+
+.card-icon {
+  font-size: 2.5rem;
+  color: var(--secondary-color);
+  margin-bottom: 1.5rem;
+}
+
+.card-cta {
+  margin-top: auto;
+  padding-top: 1.5rem;
+  font-weight: 600;
+  color: var(--accent-color);
+  display: inline-block;
+  transition: var(--transition);
+  margin-bottom: 0.5rem;
+}
+
+/* Detail Pages Layout */
+.guide-header {
+  padding: 8rem 2rem 4rem;
+  background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+  color: var(--white);
+  text-align: center;
+}
+
+.guide-header .back-link {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.9rem;
+  margin-bottom: 2rem;
+  display: inline-block;
+  font-weight: 500;
+}
+
+.guide-header h2 {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+  color: var(--white);
+}
+
+.guide-header p {
+  font-size: 1.2rem;
+  opacity: 0.9;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.guide-content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+}
+
+.guide-item {
+  margin-bottom: 4rem;
+  padding-bottom: 4rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.guide-item:last-child {
+  border-bottom: none;
+}
+
+.guide-item h3 {
+  font-size: 2rem;
+  color: var(--primary-color);
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.guide-item-content {
+  font-size: 1.1rem;
+  color: var(--text-color);
+}
+
+.guide-item-img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 1.5rem;
+  object-fit: cover;
+  margin-bottom: 2rem;
+  box-shadow: var(--shadow);
+}
+
+.guide-pro-tip {
+  background: var(--card-bg);
+  padding: 1.5rem;
+  border-radius: 1rem;
+  border-left: 4px solid var(--secondary-color);
+  margin-top: 1.5rem;
+  font-size: 1rem;
+}
+
+.guide-pro-tip>strong:first-child {
+  color: var(--primary-color);
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+/* Minimal List Layout for Guide */
+.guide-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 1rem;
+}
+
+.guide-list-item {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.guide-numbered-list {
+  list-style: decimal;
+  padding-left: 2.5rem;
+}
+
+.guide-numbered-list .guide-list-item {
+  padding-left: 0.5rem;
+}
+
+.guide-numbered-list .guide-list-item::before {
+  content: none;
+}
+
+.guide-list-item::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--secondary-color);
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.guide-list-item h4 {
+  font-size: 1.2rem;
+  color: var(--primary-color);
+  display: inline;
+  margin-right: 0.5rem;
+}
+
+.guide-list-item h4 a {
+  color: var(--primary-color);
+  text-decoration: none;
+  border-bottom: 2px solid var(--secondary-color);
+  transition: var(--transition);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding-bottom: 2px;
+}
+
+.guide-list-item h4 a::after {
+  content: "\f3c5";
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  font-size: 0.8rem;
+  color: var(--secondary-color);
+}
+
+.guide-list-item h4 a:hover {
+  background-color: rgba(212, 175, 55, 0.1);
+  border-bottom-color: var(--primary-color);
+}
+
+.guide-list-item p {
+  display: inline;
+  color: var(--text-color);
+}
+
+.guide-list-item .guide-pro-tip {
+  display: block;
+  margin-top: 1rem;
+  margin-left: -1.5rem;
+  /* Re-align with the container */
+}
+
+/* Leaflet Map Enhancements */
+#map {
+  z-index: 1;
+}
+
+.custom-emoji-marker {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.marker-circle {
+  width: 40px;
+  height: 40px;
+  background: var(--white);
+  border: 2px solid var(--primary-color);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: var(--transition);
+}
+
+.marker-label {
+  background: var(--primary-color);
+  color: white;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  margin-top: 5px;
+  white-space: nowrap;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  pointer-events: none;
+}
+
+.custom-emoji-marker:hover .marker-circle {
+  transform: scale(1.1);
+  background: var(--bg-color);
+  border-color: var(--secondary-color);
+}
+
+/* Leaflet Map Popups */
+.leaflet-popup-content-wrapper {
+  background: var(--white);
+  border-radius: 1rem;
+  padding: 0.5rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.leaflet-popup-content {
+  margin: 1rem;
+  line-height: 1.4;
+}
+
+.map-popup-title {
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--primary-color);
+  margin-bottom: 0.8rem;
+  display: block;
+}
+
+.map-popup-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.map-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1rem;
+  border-radius: 0.8rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none !important;
+  transition: var(--transition);
+}
+
+.map-btn-primary {
+  background: var(--primary-color);
+  color: white !important;
+}
+
+.map-btn-primary:hover {
+  background: var(--secondary-color);
+  transform: translateY(-2px);
+}
+
+.map-btn-secondary {
+  background: rgba(45, 90, 78, 0.1);
+  color: var(--primary-color) !important;
+}
+
+.map-btn-secondary:hover {
+  background: rgba(45, 90, 78, 0.2);
+}
+
+/* Transport Comparison Table */
+.table-container {
+  overflow-x: auto;
+  margin: 2.5rem 0;
+  border-radius: 1.5rem;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  background: var(--white);
+}
+
+.comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 1rem;
+  min-width: 650px;
+}
+
+.comparison-table th {
+  background: var(--primary-color);
+  color: white;
+  text-align: left;
+  padding: 1.5rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+}
+
+.comparison-table td {
+  padding: 1.5rem;
+  border-bottom: 1px solid var(--border-color);
+  color: var(--text-color);
+  vertical-align: top;
+  line-height: 1.6;
+}
+
+.comparison-table tr:last-child td {
+  border-bottom: none;
+}
+
+.comparison-table tr {
+  transition: var(--transition);
+}
+
+.comparison-table tr:hover {
+  background: rgba(45, 90, 78, 0.04);
+}
+
+.comparison-table tr:nth-child(even) {
+  background: rgba(45, 90, 78, 0.02);
+}
+
+.comparison-table .price-col {
+  font-weight: 700;
+  color: var(--primary-color);
+  white-space: nowrap;
+}
+
+.comparison-table strong {
+  color: var(--primary-color);
+  display: block;
+  margin-bottom: 0.2rem;
+}
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* CTA Buttons */
+.cta-container {
+  text-align: center;
+  margin: 3rem 0;
+}
+
+.cta-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  background: var(--primary-color);
+  color: white !important;
+  padding: 1.25rem 2.5rem;
+  border-radius: 3.5rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  box-shadow: 0 10px 20px rgba(45, 90, 78, 0.2);
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  border: 2px solid transparent;
+}
+
+.cta-button:hover {
+  transform: translateY(-5px) scale(1.05);
+  background: var(--secondary-color);
+  box-shadow: 0 15px 30px rgba(45, 90, 78, 0.4);
+  color: white !important;
+}
+
+.cta-button:active {
+  transform: translateY(-2px) scale(1.02);
+}
+
+.cta-button i {
+  font-size: 0.9em;
+  opacity: 0.9;
+}
+
+/* Warnings and Critical Tips */
+.guide-warning {
+  background: rgba(255, 69, 58, 0.08);
+  border: 2px solid #ff453a;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+  display: flex;
+  gap: 1.2rem;
+  align-items: flex-start;
+  animation: warning-pulse 2s infinite ease-in-out;
+}
+
+.guide-warning i {
+  color: #ff453a;
+  font-size: 1.5rem;
+  margin-top: 0.2rem;
+}
+
+.guide-warning-content strong {
+  color: #ff453a !important;
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.guide-warning-content p {
+  margin: 0;
+  color: var(--text-color);
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+@keyframes warning-pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 69, 58, 0.2);
+  }
+
+  70% {
+    box-shadow: 0 0 0 10px rgba(255, 69, 58, 0);
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 69, 58, 0);
+  }
+}
+
+/* Ensure Leaflet attribution is subtle */
+.leaflet-control-attribution {
+  font-size: 0.6rem !important;
+  opacity: 0.5;
+}
+
+/* Responsive detail page */
+@media (max-width: 768px) {
+  .guide-header h2 {
+    font-size: 2.5rem;
+  }
+
+  .guide-header {
+    padding: 6rem 1.5rem 3rem;
+  }
+
+  .guide-content {
+    padding: 2rem 1.5rem;
+  }
+}
 /* Responsive */
 @media (max-width: 768px) {
   .hero-content {

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Munich Local Guide | Laura Navarro Lora</title>
+    <link rel="stylesheet" href="../style.css">
+    <script src="https://kit.fontawesome.com/d4c858243e.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <nav>
+        <div class="nav-container">
+            <div class="logo"><a href="../index.html" style="color: inherit; text-decoration: none;">Laura Navarro
+                    Lora</a></div>
+            <ul class="nav-links">
+                <li><a href="../index.html">About</a></li>
+                <li><a href="../resume.html">Resume</a></li>
+                <li><a href="index.html" class="active">Munich Guide</a></li>
+            </ul>
+            <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+                <i class="fa-solid fa-moon"></i>
+            </button>
+            <div class="hamburger" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+    <header class="section" style="padding-bottom: 0;">
+        <div class="section-title">
+            <h2>A Local's Guide to Munich</h2>
+            <p>Curated tips for Wombat's City Hostel guests and Munich explorers.</p>
+        </div>
+    </header>
+
+    <main class="section">
+        <div class="tips-grid">
+            <!-- Must Sees -->
+            <a href="must-sees.html" class="tip-card-link" style="text-decoration: none; color: inherit;">
+                <div class="tip-card interactive-card">
+                    <h3>🏰 Must-Sees</h3>
+                    <p>Essential sights from Marienplatz to the English Garden. Don't miss the best views!</p>
+                    <span class="card-cta">Explore →</span>
+                </div>
+            </a>
+
+            <!-- Eat & Drink -->
+            <a href="eat.html" class="tip-card-link" style="text-decoration: none; color: inherit;">
+                <div class="tip-card interactive-card">
+                    <h3>🍺 Eat & Drink</h3>
+                    <p>Classic beer gardens, local pretzels, and where to find the best food in the city.</p>
+                    <span class="card-cta">Find Food →</span>
+                </div>
+            </a>
+
+            <!-- Transport -->
+            <a href="transport.html" class="tip-card-link" style="text-decoration: none; color: inherit;">
+                <div class="tip-card interactive-card">
+                    <h3>🚇 Getting Around</h3>
+                    <p>Budget-friendly transport tips, apps, and how to navigate the U-Bahn like a pro.</p>
+                    <span class="card-cta">Learn More →</span>
+                </div>
+            </a>
+
+            <!-- Local Secrets -->
+            <a href="secrets.html" class="tip-card-link" style="text-decoration: none; color: inherit;">
+                <div class="tip-card interactive-card">
+                    <h3>🥨 Local Secrets</h3>
+                    <p>Hidden gems and places only locals know about. Experience Munich off the beaten path.</p>
+                    <span class="card-cta">Discover →</span>
+                </div>
+            </a>
+
+            <!-- Shopping -->
+            <a href="shopping.html" class="tip-card-link" style="text-decoration: none; color: inherit;">
+                <div class="tip-card interactive-card">
+                    <h3>🛍️ Shopping</h3>
+                    <p>Where to get cheap groceries and find the best local shops. Plan your Sunday ahead!</p>
+                    <span class="card-cta">Shop Now →</span>
+                </div>
+            </a>
+        </div>
+
+        <section
+            style="margin-top: 4rem; padding: 2rem; background: var(--card-bg); border-radius: 1rem; text-align: center; border: 1px solid var(--border-color);">
+            <h3 style="font-family: var(--font-heading); font-size: 1.8rem; color: var(--primary-color);">Staying at
+                Wombat's?</h3>
+            <p>I'm often at the reception! Come say hi and let me know if you need more personalized recommendations.
+            </p>
+            <div style="margin-top: 2rem;">
+                <a href="https://www.booking.com/example-affiliate" class="btn btn-primary">Book Your Stay</a>
+            </div>
+        </section>
+    </main>
+
+    <footer
+        style="text-align: center; padding: 2rem; background: var(--primary-color); color: white; margin-top: 4rem;">
+        <p>&copy; 2026 Laura Navarro Lora | Helping you discover Munich.</p>
+    </footer>
+
+    <script src="../scrips.js"></script>
+</body>
+
+</html>

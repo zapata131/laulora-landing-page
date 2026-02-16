@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Where to Eat in Munich | Laura Navarro Lora</title>
+    <link rel="stylesheet" href="../style.css">
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <script src="https://kit.fontawesome.com/d4c858243e.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <nav>
+        <div class="nav-container">
+            <div class="logo"><a href="../index.html" style="color: inherit; text-decoration: none;">Laura Navarro
+                    Lora</a></div>
+            <ul class="nav-links">
+                <li><a href="../index.html">About</a></li>
+                <li><a href="../resume.html">Resume</a></li>
+                <li><a href="index.html" class="active">Munich Guide</a></li>
+            </ul>
+            <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+                <i class="fa-solid fa-moon"></i>
+            </button>
+        </div>
+    </nav>
+
+    <header class="guide-header">
+        <div class="container">
+            <a href="index.html" class="back-link">← Back to Guide Hub</a>
+            <h2>Eat & Drink Like a Local</h2>
+            <p>Welcome to Munich! Since you’re staying at the Hauptbahnhof, you’re in the perfect spot to explore the
+                city's best eats—from traditional Bavarian feasts to the best late-night kebabs.</p>
+        </div>
+    </header>
+
+    <main class="guide-content">
+        <!-- Map Section -->
+        <section class="guide-item" style="border-bottom: none; margin-bottom: 2rem; padding-bottom: 0; border: none;">
+            <h3 style="margin-bottom: 1rem;">🍽️ Interactive Munich Food Map</h3>
+            <div id="map"
+                style="width: 100%; height: 450px; border-radius: 1.5rem; overflow: hidden; border: 1px solid var(--border-color); margin-bottom: 1rem; background: #f0f0f0;">
+            </div>
+            <p style="font-size: 0.9rem; color: var(--text-muted); text-align: center;">Click on markers to zoom in and
+                see options. Smooth scroll down to details or open in Google Maps.</p>
+        </section>
+
+        <hr style="border: none; border-top: 1px solid var(--border-color); margin: 2rem 0;">
+
+        <!-- The Schnitzel Guide -->
+        <section class="guide-item">
+            <h3>🥩 The Schnitzel Guide</h3>
+            <p style="margin-bottom: 1rem; font-style: italic;">While the <em>Wiener Schnitzel</em> (veal) is
+                technically Austrian, Munich has perfected its own version. The <strong>Münchner Schnitzel</strong> is
+                unique because the meat is often brushed with a mix of sweet mustard and horseradish before being
+                breaded.</p>
+
+            <ul class="guide-list">
+                <li class="guide-list-item" id="straubinger">
+                    <h4><a href="https://www.google.com/maps/search/?api=1&query=Wirtshaus+Zum+Straubinger"
+                            target="_blank">Wirtshaus Zum Straubinger</a>:</h4>
+                    <p>The upscale choice. A polished, traditional tavern perfect for a high-quality Schnitzel and other
+                        Bavarian delicacies in a classic setting.</p>
+                </li>
+                <li class="guide-list-item" id="krablergarten">
+                    <h4><a href="https://www.google.com/maps/search/?api=1&query=Andy%27s+Krablergarten"
+                            target="_blank">Andy's Krablergarten</a>:</h4>
+                    <p>The best "bang for your buck." The portions are legendary.</p>
+                    <div class="guide-pro-tip">
+                        <strong>💡 Pro Tip: Custom Breading</strong>
+                        <p>Order the regular schnitzel with <strong>mustard</strong> or <strong>horseradish</strong>
+                            baked into the breading for the most flavor.</p>
+                    </div>
+                </li>
+                <li class="guide-list-item" id="steinheil">
+                    <h4><a href="https://www.google.com/maps/search/?api=1&query=Steinheil+16" target="_blank">Steinheil
+                            16</a>:</h4>
+                    <p>The budget legend. Located in the university district (Maxvorstadt), it’s no-frills and serves a
+                        Schnitzel hanging off the plate.</p>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Bavarian Breakfast -->
+        <section class="guide-item">
+            <h3>🥨 Bavarian Breakfast (Weißwurstfrühstück)</h3>
+            <p style="margin-bottom: 1rem; font-style: italic;">A true local breakfast consists of <em>Weißwurst</em>
+                (white veal sausage), a soft pretzel, and sweet mustard. It should be eaten before noon!</p>
+
+            <ul class="guide-list">
+                <li class="guide-list-item" id="dreimuhlen">
+                    <h4><a href="https://www.google.com/maps/search/?api=1&query=Augustiner+Drei+Mühlen"
+                            target="_blank">Augustiner Drei Mühlen</a>:</h4>
+                    <p>A cozy, authentic neighborhood spot away from the main tourist crowds.</p>
+                </li>
+                <li class="guide-list-item" id="rischart">
+                    <h4><a href="https://www.google.com/maps/search/?api=1&query=Rischart+Marienplatz"
+                            target="_blank">Rischart at Marienplatz</a>:</h4>
+                    <p>Right in the heart of the city. Eating breakfast with a view of the Town Hall (Rathaus) is an
+                        essential Munich experience.</p>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Beer Garden Tradition -->
+        <section class="guide-item">
+            <h3>🍺 The Beer Garden Tradition</h3>
+            <p style="margin-bottom: 1rem; color: var(--primary-color); font-weight: 500;">The Golden Rule: By law, you
+                are allowed to bring your own food, but you must buy your drinks from the brewery.</p>
+
+            <ul class="guide-list">
+                <li class="guide-list-item" id="augustiner">
+                    <h4><a href="https://www.google.com/maps/search/?api=1&query=Augustiner+Keller"
+                            target="_blank">Augustiner Keller</a>:</h4>
+                    <p>Very close to the hostel and Hauptbahnhof. It’s one of the oldest and most atmospheric gardens in
+                        the city.</p>
+                </li>
+                <li class="guide-list-item" id="chinatower">
+                    <h4><a href="https://www.google.com/maps/search/?api=1&query=Biergarten+am+Chinesischen+Turm"
+                            target="_blank">Biergarten am Chinesischen Turm</a>:</h4>
+                    <p>A must-see icon in the English Garden.</p>
+                    <div class="guide-pro-tip">
+                        <strong>💡 Pro Tip: Kocherlball</strong>
+                        <p>If you're here in July, look out for the Kocherlball, an annual tradition where thousands
+                            dance in traditional dress at 6:00 AM.</p>
+                    </div>
+                </li>
+                <li class="guide-list-item" id="hofbraukeller">
+                    <h4><a href="https://www.google.com/maps/search/?api=1&query=Hofbräukeller+München"
+                            target="_blank">Hofbräukeller am Wiener Platz</a>:</h4>
+                    <p>Our favorite. It’s more local, less crowded, and a great excuse to explore the Haidhausen
+                        neighborhood.</p>
+                </li>
+                <li class="guide-list-item" id="minihofbrau">
+                    <h4><a href="https://www.google.com/maps/search/?api=1&query=Mini-Hofbräuhaus+Englischer+Garten"
+                            target="_blank">Mini-Hofbräuhaus (English Garden)</a>:</h4>
+                    <p>A hidden gem in the northern English Garden. Perfect to escape the crowds.</p>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Quick Bites & Late Night -->
+        <section class="guide-item">
+            <h3>🍟 Quick Bites & Late Night</h3>
+
+            <ul class="guide-list">
+                <li class="guide-list-item" id="verdi">
+                    <h4><a href="https://www.google.com/maps/search/?api=1&query=Verdi+Supermarkt+Munich"
+                            target="_blank">Verdi Supermarkt</a>:</h4>
+                    <p>Just a couple blocks from the hostel. The Döner counter at the front is one of the best in the
+                        city.</p>
+                </li>
+                <li class="guide-list-item" id="turkitch">
+                    <h4><a href="https://www.google.com/maps/search/?api=1&query=Türkitch+Munich"
+                            target="_blank">Türkitch</a>:</h4>
+                    <p>Famous for modern, flavor-packed kebabs with fresh herbs and unique sauces.</p>
+                </li>
+                <li class="guide-list-item" id="chaat">
+                    <h4><a href="https://www.google.com/maps/place/Chat+Junction/@48.13404,11.57962,17z/data=!3m1!4b1!4m6!3m5!1s0x479e75a50d2e2935:0xa9c9e5e7b2f6f2a!8m2!3d48.13404!4d11.57962!16s%2Fg%2F11fn77501n?entry=ttu"
+                            target="_blank">Chaat Junction</a>:</h4>
+                    <p>A true hidden gem located near Isartor. Authentic Indian street food that hits the spot when
+                        you're craving something spicy and flavorful.</p>
+                </li>
+                <li class="guide-list-item" id="bergwolf">
+                    <h4><a href="https://www.google.com/maps/search/?api=1&query=Bergwolf+Munich"
+                            target="_blank">Bergwolf</a>:</h4>
+                    <p>The ultimate after-party spot for currywurst and fries.</p>
+                    <div class="guide-pro-tip">
+                        <strong>🌶️ Spice Level: "Brutal"</strong>
+                        <p>Try the traditional currywurst with spice level "Brutal" if you can handle serious heat;
+                            otherwise, stick to the regular option.</p>
+                    </div>
+                </li>
+                <li class="guide-list-item" id="burgermeister">
+                    <h4><a href="https://www.google.com/maps/search/?api=1&query=Burgermeister+Münchner+Freiheit"
+                            target="_blank">Burgermeister (Münchner Freiheit)</a>:</h4>
+                    <p>A great budget burger option located in the lively Schwabing district.</p>
+                </li>
+            </ul>
+        </section>
+    </main>
+
+    <footer
+        style="text-align: center; padding: 2rem; background: var(--primary-color); color: white; margin-top: 4rem;">
+        <p>&copy; 2026 Laura Navarro Lora | Helping you discover Munich.</p>
+    </footer>
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script>
+        // Markers Data
+        const locations = [
+            { id: "straubinger", name: "Straubinger", coords: [48.1326, 11.5702], emoji: "🥩", gmaps: "https://www.google.com/maps/search/?api=1&query=Wirtshaus+Zum+Straubinger" },
+            { id: "krablergarten", name: "Krablergarten", coords: [48.1309, 11.5647], emoji: "🥩", gmaps: "https://www.google.com/maps/search/?api=1&query=Andy%27s+Krablergarten" },
+            { id: "steinheil", name: "Steinheil 16", coords: [48.1481, 11.5606], emoji: "🥩", gmaps: "https://www.google.com/maps/search/?api=1&query=Steinheil+16" },
+            { id: "dreimuhlen", name: "Drei Mühlen", coords: [48.1256, 11.5601], emoji: "🥨", gmaps: "https://www.google.com/maps/search/?api=1&query=Augustiner+Drei+Mühlen" },
+            { id: "rischart", name: "Rischart Marienplatz", coords: [48.1373, 11.5755], emoji: "🥨", gmaps: "https://www.google.com/maps/search/?api=1&query=Rischart+Marienplatz" },
+            { id: "augustiner", name: "Augustiner Keller", coords: [48.1432, 11.5517], emoji: "🍺", gmaps: "https://www.google.com/maps/search/?api=1&query=Augustiner+Keller" },
+            { id: "chinatower", name: "Chinesischer Turm", coords: [48.1525, 11.5920], emoji: "🍺", gmaps: "https://www.google.com/maps/search/?api=1&query=Biergarten+am+Chinesischen+Turm" },
+            { id: "hofbraukeller", name: "Hofbräukeller", coords: [48.1362, 11.5939], emoji: "🍺", gmaps: "https://www.google.com/maps/search/?api=1&query=Hofbräukeller+München" },
+            { id: "minihofbrau", name: "Mini-Hofbräuhaus", coords: [48.1691, 11.6033], emoji: "🍺", gmaps: "https://www.google.com/maps/search/?api=1&query=Mini-Hofbräuhaus+Englischer+Garten" },
+            { id: "verdi", name: "Verdi Supermarkt", coords: [48.1388, 11.5583], emoji: "🍟", gmaps: "https://www.google.com/maps/search/?api=1&query=Verdi+Supermarkt+Munich" },
+            { id: "turkitch", name: "Türkitch", coords: [48.1303, 11.5694], emoji: "🍟", gmaps: "https://www.google.com/maps/search/?api=1&query=Türkitch+Munich" },
+            { id: "bergwolf", name: "Bergwolf", coords: [48.1306, 11.5714], emoji: "🍟", gmaps: "https://www.google.com/maps/search/?api=1&query=Bergwolf+Munich" },
+            { id: "burgermeister", name: "Burgermeister", coords: [48.1614, 11.5866], emoji: "🍔", gmaps: "https://www.google.com/maps/search/?api=1&query=Burgermeister+Münchner+Freiheit" },
+            { id: "chaat", name: "Chaat Junction", coords: [48.1340, 11.5796], emoji: "🍛", gmaps: "https://www.google.com/maps/place/Chat+Junction/@48.13404,11.57962,17z/data=!3m1!4b1!4m6!3m5!1s0x479e75a50d2e2935:0xa9c9e5e7b2f6f2a!8m2!3d48.13404!4d11.57962!16s%2Fg%2F11fn77501n?entry=ttu" }
+        ];
+
+        // Initialize Map
+        const map = L.map('map').setView([48.140, 11.570], 13);
+
+        // Add Google Maps Light Tiles
+        L.tileLayer('https://mt1.google.com/vt/lyrs=m&x={x}&y={y}&z={z}', {
+            attribution: '&copy; Google Maps',
+            maxZoom: 20
+        }).addTo(map);
+
+        // Add Markers
+        locations.forEach(loc => {
+            const customIcon = L.divIcon({
+                html: `
+                    <div class="custom-emoji-marker">
+                        <div class="marker-circle">${loc.emoji}</div>
+                        <div class="marker-label">${loc.name}</div>
+                    </div>
+                `,
+                className: '',
+                iconSize: [40, 60],
+                iconAnchor: [20, 60]
+            });
+
+            const marker = L.marker(loc.coords, { icon: customIcon }).addTo(map);
+
+            // Create Popup Content
+            const popupContent = `
+                <div class="map-popup">
+                    <span class="map-popup-title">${loc.name}</span>
+                    <div class="map-popup-buttons">
+                        <a href="#${loc.id}" class="map-btn map-btn-primary">👇 Scroll to details</a>
+                        <a href="${loc.gmaps}" target="_blank" class="map-btn map-btn-secondary">🗺️ View on Google Maps</a>
+                    </div>
+                </div>
+            `;
+
+            marker.bindPopup(popupContent, {
+                closeButton: false,
+                offset: [0, -40]
+            });
+
+            // Center on click
+            marker.on('click', function (e) {
+                map.setView(e.target.getLatLng(), 15, { animate: true });
+            });
+        });
+    </script>
+    <script src="../scrips.js"></script>
+</body>
+
+</html>
