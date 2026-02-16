@@ -1000,6 +1000,26 @@ html {
   }
 }
 
+/* Subtle Badges */
+.cash-only-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.25rem 0.75rem;
+  background: rgba(45, 90, 78, 0.08);
+  border: 1px solid rgba(45, 90, 78, 0.2);
+  border-radius: 2rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--primary-color);
+  margin-left: 0.5rem;
+  vertical-align: middle;
+}
+
+.cash-only-badge i {
+  font-size: 0.9rem;
+  color: var(--secondary-color);
+}
 /* App Download Buttons */
 .app-btn-group {
   display: flex;
