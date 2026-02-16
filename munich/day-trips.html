@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Munich Day Trips | Laura's Guide</title>
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="../img/favicon.png">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="../style.css">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+  <!-- Leaflet Map CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+</head>
+
+<body>
+  <nav>
+    <div class="nav-container">
+      <a href="../index.html" class="logo">LN</a>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a href="../resume.html">Resume</a>
+        <a href="index.html" class="active">Munich Guide</a>
+      </div>
+      <div style="display: flex; align-items: center;">
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Theme">
+          <i class="fa-solid fa-moon"></i>
+        </button>
+        <div class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="guide-disclaimer">
+    None of these are affiliate links, but you can always tip me personally or through <a
+      href="https://ko-fi.com/zapata131" target="_blank">ko-fi</a>.
+  </div>
+
+  <header class="guide-header">
+    <div class="container">
+      <a href="index.html" class="back-link">← Back to Munich Hub</a>
+      <h1>⛰️ Day Trips from Munich</h1>
+      <p>Staying at Wombat's City Hostel means you're perfectly positioned at the Hauptbahnhof for regional travel. All
+        these trips are fully covered by your Deutschlandticket or a Bayern Ticket.</p>
+    </div>
+  </header>
+
+  <main class="guide-content">
+    <!-- Interactive Regional Map -->
+    <section class="guide-item" style="border-bottom: none; margin-bottom: 2rem; padding-bottom: 0; border: none;">
+      <h3 style="margin-bottom: 1rem;">🗺️ Regional Travel Map</h3>
+      <div id="map"
+        style="width: 100%; height: 450px; border-radius: 1.5rem; overflow: hidden; border: 1px solid var(--border-color); margin-bottom: 1rem; background: #f0f0f0;">
+      </div>
+      <p style="font-size: 0.9rem; color: var(--text-muted); text-align: center;">Click on markers to see travel details
+        and locations.</p>
+    </section>
+
+    <hr style="border: none; border-top: 1px solid var(--border-color); margin: 2rem 0;">
+
+    <!-- Ammersee & Andechs -->
+    <section class="guide-item" id="ammersee">
+      <h3>⛵ Lake Ammersee & Kloster Andechs</h3>
+      <p style="margin-bottom: 1rem; font-style: italic;">The ultimate Land & Water day. Start at the lake in
+        Herrsching, hike to the "Holy Mountain" for beer, and finish with a sunset by the water.</p>
+
+      <div class="guide-pro-tip">
+        <strong>🚇 How to Get There</strong>
+        <p>Take the <strong>S8 toward Herrsching</strong> from the lower platforms at Munich Hbf. It's the final stop
+          and takes about 50 minutes.</p>
+      </div>
+
+      <ul class="guide-list">
+        <li class="guide-list-item">
+          <h4>The Hike:</h4>
+          <p>Follow signs for "Andechs." It's a scenic 45-60 minute walk through the Kienbach Valley forest.</p>
+        </li>
+        <li class="guide-list-item">
+          <h4><a href="https://www.google.com/maps/search/?api=1&query=Kloster+Andechs" target="_blank"
+              class="gmaps-link">Kloster Andechs</a>:</h4>
+          <p>Visit the Bräustüberl for a liter of Doppelbock and a massive pork knuckle (Haxe). Don't miss the Rococo
+            church next door.</p>
+        </li>
+        <li class="guide-list-item">
+          <h4>The Promenade:</h4>
+          <p>Herrsching has Germany’s longest lakeside promenade (over 8km), lined with ice cream shops and cafes like
+            <em>Carlas Kaffeehaus</em>.</p>
+        </li>
+        <li class="guide-list-item">
+          <h4>On the Water:</h4>
+          <p>Rent a pedal boat or take a nostalgic paddle-steamer across the lake to Dießen to see the Marienmünster
+            church.</p>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Tegernsee -->
+    <section class="guide-item" id="tegernsee">
+      <h3>🏔️ Tegernsee: Beer, Boats & Peaks</h3>
+      <p style="margin-bottom: 1rem; font-style: italic;">Tegernsee is the "glamour" lake of the Alps; it's deeper and
+        more mountainous than Ammersee, offering a true Alpine feel just an hour away.</p>
+
+      <div class="guide-pro-tip">
+        <strong>🚇 How to Get There</strong>
+        <p>Take the <strong>BRB (Bayerische Regiobahn)</strong> directly from Munich Hbf. Total travel time is about 1
+          hour.</p>
+        <p style="margin-top: 0.5rem; font-size: 0.9rem;"><strong>💡 Pro Tip:</strong> The train "splits" mid-way.
+          Ensure your carriage is marked for <strong>Tegernsee</strong>.</p>
+      </div>
+
+      <ul class="guide-list">
+        <li class="guide-list-item">
+          <h4><a href="https://www.google.com/maps/search/?api=1&query=Herzoglich+Bayerisches+Brauhaus+Tegernsee"
+              target="_blank" class="gmaps-link">Bräustüberl Tegernsee</a>:</h4>
+          <p>The Helles here is considered by many to be the best in Bavaria. It sits right on the water.</p>
+        </li>
+        <li class="guide-list-item">
+          <h4><a href="https://www.google.com/maps/search/?api=1&query=Wallbergbahn" target="_blank"
+              class="gmaps-link">Wallberg Cable Car</a>:</h4>
+          <p>Whisks you up to 1,722m for a panoramic view of the entire lake and the peaks of Austria.</p>
+        </li>
+        <li class="guide-list-item">
+          <h4>Lakeside Path:</h4>
+          <p>Walk the flat path from Tegernsee town to Rottach-Egern for high-end window shopping and mountain views.
+          </p>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Other Classics -->
+    <section class="guide-item">
+      <h3>🎻 Further Afield: Gorges & Castles</h3>
+
+      <ul class="guide-list">
+        <li class="guide-list-item" id="mittenwald">
+          <h4><a href="https://www.google.com/maps/search/?api=1&query=Mittenwald+Leutasch+Spirit+Gorge" target="_blank"
+              class="gmaps-link">Mittenwald</a>:</h4>
+          <p>The Village of 1,000 Violins. Take the train toward Innsbruck (~1h 45m). Walk the Leutasch Spirit Gorge or
+            take the Karwendelbahn cable car.</p>
+        </li>
+        <li class="guide-list-item" id="neuschwanstein">
+          <h4><a href="https://www.google.com/maps/search/?api=1&query=Neuschwanstein+Castle+Marienbrücke"
+              target="_blank" class="gmaps-link">Neuschwanstein</a>:</h4>
+          <p>Take the regional train to Füssen (~2h). The best view is from the <strong>Marienbrücke</strong>. Remember
+            to book your castle tickets weeks in advance!</p>
+        </li>
+        <li class="guide-list-item" id="salzburg">
+          <h4><a href="https://www.google.com/maps/search/?api=1&query=Mirabell+Gardens+Salzburg" target="_blank"
+              class="gmaps-link">Salzburg</a>:</h4>
+          <p>Use the RE 5 train (~1h 45m). Your Deutschlandticket is valid all the way to Salzburg! Visit Mirabell
+            Gardens and the Hohensalzburg Fortress.</p>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Quick Reference Table -->
+    <section class="guide-item">
+      <h3>💡 Quick Reference Guide (2026)</h3>
+      <div class="table-container">
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>Destination</th>
+              <th>Primary Train</th>
+              <th>Coverage</th>
+              <th>Best "To Do"</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Ammersee</strong></td>
+              <td>S8 to Herrsching</td>
+              <td>D-Ticket / Zone M-5</td>
+              <td>Hike Kloster Andechs + Boats</td>
+            </tr>
+            <tr>
+              <td><strong>Tegernsee</strong></td>
+              <td>BRB (Regional)</td>
+              <td>D-Ticket / Bayern</td>
+              <td>Brauhaus + Wallberg Views</td>
+            </tr>
+            <tr>
+              <td><strong>Mittenwald</strong></td>
+              <td>RB to Innsbruck</td>
+              <td>D-Ticket / Bayern</td>
+              <td>Alpine Gorge & Painted Houses</td>
+            </tr>
+            <tr>
+              <td><strong>Neuschwanstein</strong></td>
+              <td>RE/RB to Füssen</td>
+              <td>D-Ticket / Bayern</td>
+              <td>Castle View (Marienbrücke)</td>
+            </tr>
+            <tr>
+              <td><strong>Salzburg</strong></td>
+              <td>RE 5 (Regional)</td>
+              <td>D-Ticket / Bayern</td>
+              <td>Gardens & Fortress</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <footer style="text-align: center; padding: 2rem; background: var(--primary-color); color: white; margin-top: 4rem;">
+    <p>© 2026 Laura • Hand-crafted in Munich</p>
+  </footer>
+
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Theme Toggle
+      const themeToggle = document.getElementById('theme-toggle');
+      const icon = themeToggle.querySelector('i');
+
+      const setTheme = (theme) => {
+        document.documentElement.setAttribute('data-theme', theme);
+        localStorage.setItem('theme', theme);
+        icon.className = theme === 'dark' ? 'fa-solid fa-sun' : 'fa-solid fa-moon';
+      };
+
+      const savedTheme = localStorage.getItem('theme') || 'light';
+      setTheme(savedTheme);
+
+      themeToggle.addEventListener('click', () => {
+        const currentTheme = document.documentElement.getAttribute('data-theme');
+        setTheme(currentTheme === 'dark' ? 'light' : 'dark');
+      });
+
+      // Map Initialization
+      // Center zoomed out to show the Munich region (Upper Bavaria)
+      const map = L.map('map').setView([47.75, 11.55], 8);
+
+      L.tileLayer('https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: '© OpenStreetMap contributors, Tiles style by Humanitarian OpenStreetMap Team'
+      }).addTo(map);
+
+      const locations = [
+        {
+          name: "Lake Ammersee & Andechs",
+          coords: [47.9833, 11.1833],
+          emoji: "⛵",
+          description: "Hike to the monastery brewery and rent boats on the lake.",
+          id: "ammersee",
+          gmaps: "https://www.google.com/maps/search/?api=1&query=Kloster+Andechs"
+        },
+        {
+          name: "Tegernsee",
+          coords: [47.7027, 11.7588],
+          emoji: "🏔️",
+          description: "Elite Bavarian beer and stunning Alpine views from Wallberg.",
+          id: "tegernsee",
+          gmaps: "https://www.google.com/maps/search/?api=1&query=Herzoglich+Bayerisches+Brauhaus+Tegernsee"
+        },
+        {
+          name: "Mittenwald",
+          coords: [47.4279, 11.2353],
+          emoji: "🎻",
+          description: "The Village of 1,000 Violins and the Leutasch Spirit Gorge.",
+          id: "mittenwald",
+          gmaps: "https://www.google.com/maps/search/?api=1&query=Mittenwald+Leutasch+Spirit+Gorge"
+        },
+        {
+          name: "Neuschwanstein",
+          coords: [47.5550, 10.7494],
+          emoji: "🏰",
+          description: "Bavaria's most famous castle. View it from Marienbrücke.",
+          id: "neuschwanstein",
+          gmaps: "https://www.google.com/maps/search/?api=1&query=Neuschwanstein+Castle+Marienbrücke"
+        },
+        {
+          name: "Salzburg",
+          coords: [47.7830, 13.0503],
+          emoji: "🎶",
+          description: "Mozart's city. Your D-Ticket takes you all the way there!",
+          id: "salzburg",
+          gmaps: "https://www.google.com/maps/search/?api=1&query=Mirabell+Gardens+Salzburg"
+        }
+      ];
+
+      locations.forEach(loc => {
+        const customIcon = L.divIcon({
+          html: `<div class="custom-emoji-marker">
+                             <div class="marker-circle">${loc.emoji}</div>
+                             <div class="marker-label">${loc.name}</div>
+                           </div>`,
+          className: '',
+          iconSize: [40, 40],
+          iconAnchor: [20, 20]
+        });
+
+        const marker = L.marker(loc.coords, { icon: customIcon }).addTo(map);
+
+        marker.bindPopup(`
+                    <div style="font-family: inherit;">
+                        <h4 style="margin: 0 0 0.5rem; color: #064e3b;">${loc.emoji} ${loc.name}</h4>
+                        <p style="margin: 0 0 1rem; font-size: 0.9rem;">${loc.description}</p>
+                        <div style="display: flex; gap: 0.5rem;">
+                            <a href="#${loc.id}" class="map-btn" style="background: #064e3b; color: white; padding: 5px 10px; border-radius: 8px; font-size: 0.8rem;">Details</a>
+                            <a href="${loc.gmaps}" target="_blank" class="map-btn map-btn-secondary" style="border: 1px solid #064e3b; color: #064e3b; padding: 5px 10px; border-radius: 8px; font-size: 0.8rem;">🗺️ Google Maps</a>
+                        </div>
+                    </div>
+                `);
+      });
+    });
+  </script>
+</body>
+
+</html>
