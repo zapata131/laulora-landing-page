@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Munich Museums Guide | Laura Navarro Lora</title>
+  <link rel="icon" type="image/png" href="../favicon.png">
+  <link rel="stylesheet" href="../style.css">
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+  <script src="https://kit.fontawesome.com/d4c858243e.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <nav>
+    <div class="nav-container">
+      <div class="logo"><a href="../index.html" style="color: inherit; text-decoration: none;">Laura Navarro
+          Lora</a></div>
+      <ul class="nav-links">
+        <li><a href="../index.html">About</a></li>
+        <li><a href="../resume.html">Resume</a></li>
+        <li><a href="index.html" class="active">Munich Guide</a></li>
+      </ul>
+      <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+        <i class="fa-solid fa-moon"></i>
+      </button>
+    </div>
+  </nav>
+  <div class="guide-disclaimer">
+    <div class="container">
+      <p>None of these are affiliate links, but you can always tip me personally or through <a href="#">ko-fi</a>.</p>
+    </div>
+  </div>
+  <header class="guide-header">
+    <div class="container">
+      <a href="index.html" class="back-link">← Back to Guide Hub</a>
+      <h2>Munich Museums Guide</h2>
+      <p>World-class art for €1, quirky niche collections, and powerful history.</p>
+    </div>
+  </header>
+
+  <main class="guide-content">
+    <!-- Map Section -->
+    <section class="guide-item" style="border-bottom: none; margin-bottom: 2rem; padding-bottom: 0; border: none;">
+      <h3 style="margin-bottom: 1rem;">🗺️ Museums Map</h3>
+      <div id="map"
+        style="width: 100%; height: 400px; border-radius: 1.5rem; overflow: hidden; border: 1px solid var(--border-color); margin-bottom: 1rem; background: #f0f0f0;">
+      </div>
+      <p style="font-size: 0.9rem; color: var(--text-muted); text-align: center;">Click on markers to explore.
+        Auto-zoom and quick links included.</p>
+    </section>
+
+    <hr style="border: none; border-top: 1px solid var(--border-color); margin: 2rem 0;">
+
+    <section class="guide-item">
+      <h3>⚡ Seeworthy Spots: The Sunday €1 Deal</h3>
+      <p style="margin-bottom: 1.5rem; color: var(--text-muted);">In Munich, Sundays are "Culture Days." Most state-run
+        museums drop their admission from €7 to €12 down to just €1.</p>
+
+      <div class="table-container" style="margin-bottom: 2rem;">
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>Museum</th>
+              <th>What to see</th>
+              <th>Vibe</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong><a href="https://www.google.com/maps/search/?api=1&query=Alte+Pinakothek+Munich"
+                    target="_blank">Alte Pinakothek</a></strong></td>
+              <td>The "Old Masters" (Da Vinci, Rubens, Dürer).</td>
+              <td>Grand and massive.</td>
+            </tr>
+            <tr>
+              <td><strong><a href="https://www.google.com/maps/search/?api=1&query=Pinakothek+der+Moderne+Munich"
+                    target="_blank">Pinakothek der Moderne</a></strong></td>
+              <td>4-in-1: Modern Art, Design, Architecture.</td>
+              <td>Bright and airy.</td>
+            </tr>
+            <tr>
+              <td><strong><a href="https://www.google.com/maps/search/?api=1&query=Museum+Brandhorst+Munich"
+                    target="_blank">Museum Brandhorst</a></strong></td>
+              <td>Pop Art (Warhol) and Cy Twombly.</td>
+              <td>Vibrant and colorful.</td>
+            </tr>
+            <tr>
+              <td><strong><a href="https://www.google.com/maps/search/?api=1&query=Glyptothek+Munich"
+                    target="_blank">Glyptothek</a></strong></td>
+              <td>Ancient Greek and Roman statues.</td>
+              <td>Temple vibes & cafe.</td>
+            </tr>
+            <tr>
+              <td><strong><a href="https://www.google.com/maps/search/?api=1&query=Egyptian+Museum+Munich"
+                    target="_blank">Egyptian Museum</a></strong></td>
+              <td>5,000 years of history underground.</td>
+              <td>Mysterious and minimalist.</td>
+            </tr>
+            <tr>
+              <td><strong><a href="https://www.google.com/maps/search/?api=1&query=Bayerisches+Nationalmuseum"
+                    target="_blank">Bavarian National Museum</a></strong></td>
+              <td>Knight's armor and royal furniture.</td>
+              <td>Bavarian history.</td>
+            </tr>
+            <tr>
+              <td><strong><a href="https://www.google.com/maps/search/?api=1&query=Sammlung+Schack+Munich"
+                    target="_blank">Sammlung Schack</a></strong></td>
+              <td>Romantic German paintings and myths.</td>
+              <td>Cozy and moody.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="guide-pro-tip">
+        <strong>💡 Backpacker Tip: Sunday Strategy</strong>
+        <p>These spots get busy on Sundays! Go right when they open (usually 10:00 AM) or during the lunch hour to avoid
+          the crowds.</p>
+      </div>
+    </section>
+
+    <section class="guide-item">
+      <h3>🎨 Unique Locations: Quirky Museums</h3>
+      <p style="margin-bottom: 1.5rem; color: var(--text-muted);">If you want something beyond oil paintings and
+        statues, these spots offer a more niche experience.</p>
+      <ul class="guide-list">
+        <li class="guide-list-item" id="valentin">
+          <h4><a href="https://www.google.com/maps/search/?api=1&query=Valentin-Karlstadt-Musäum"
+              target="_blank">Valentin-Karlstadt-Musäum</a>:</h4>
+          <p>Located in the Isartor city gate, this is dedicated to Karl Valentin, the "Charlie Chaplin of Bavaria."
+            It’s full of absurdist humor and weird inventions like a "winter tooth." (~€3)</p>
+        </li>
+        <li class="guide-list-item" id="beer">
+          <h4><a href="https://www.google.com/maps/search/?api=1&query=Beer+and+Oktoberfest+Museum" target="_blank">Beer
+              & Oktoberfest Museum</a>:</h4>
+          <p>Housed in the city's oldest townhouse (built in 1340). It’s creaky, historic, and explains why beer is
+            basically a food group in Munich. (~€4)</p>
+        </li>
+        <li class="guide-list-item" id="potato">
+          <h4><a href="https://www.google.com/maps/search/?api=1&query=Kartoffelmuseum+Munich" target="_blank">The
+              Potato Museum (Kartoffelmuseum)</a>:</h4>
+          <p>Yes, it exists. It covers everything from potato art to history. It's usually free but check their hours as
+            they are often only open Fridays and Saturdays.</p>
+        </li>
+        <li class="guide-list-item" id="muca">
+          <h4><a href="https://www.google.com/maps/search/?api=1&query=MUCA+Munich" target="_blank">MUCA (Street
+              Art)</a>:</h4>
+          <p>Germany’s first street art museum. The murals on the outside are free, and the inside is packed with works
+            by Banksy and Shepard Fairey.</p>
+        </li>
+      </ul>
+    </section>
+
+    <section class="guide-item">
+      <h3>🌿 Quiet Moments: Free Museums & Libraries</h3>
+      <p style="margin-bottom: 1.5rem; color: var(--text-muted);">These spots are perfect for budget travelers because
+        they are always free, regardless of the day.</p>
+      <ul class="guide-list">
+        <li class="guide-list-item" id="nsdoku">
+          <h4><a href="https://www.google.com/maps/search/?api=1&query=NS-Dokumentationszentrum+Munich"
+              target="_blank">NS-Dokumentationszentrum</a>:</h4>
+          <p>A sobering, well-designed museum on the site of the former Nazi headquarters. It’s a powerful place for
+            reflection and is free every day.</p>
+        </li>
+        <li class="guide-list-item" id="stuck">
+          <h4><a href="https://www.google.com/maps/search/?api=1&query=Villa+Stuck+Munich" target="_blank">Palais Stuck
+              (Villa Stuck)</a>:</h4>
+          <p>The main exhibitions cost money, but the historical rooms of this Art Nouveau villa are sometimes
+            accessible for free or at a reduced rate. A masterpiece of Jugendstil architecture.</p>
+        </li>
+        <li class="guide-list-item" id="maximiliansforum">
+          <h4><a href="https://www.google.com/maps/search/?api=1&query=MaximiliansForum+Munich"
+              target="_blank">MaximiliansForum</a>:</h4>
+          <p>An underground art space in a pedestrian subway underpass. It’s experimental, a bit gritty, and free to
+            walk through 24/7.</p>
+        </li>
+        <li class="guide-list-item" id="geo">
+          <h4><a href="https://www.google.com/maps/search/?api=1&query=Paleontological+Museum+Munich"
+              target="_blank">Geological & Paleontological Museums</a>:</h4>
+          <p>Located in the University district (Maxvorstadt). You can walk in for free to see dinosaur skeletons and
+            massive crystals. It’s usually very quiet and a great brain break.</p>
+        </li>
+      </ul>
+    </section>
+  </main>
+
+  <footer style="text-align: center; padding: 2rem; background: var(--primary-color); color: white; margin-top: 4rem;">
+    <p>&copy; 2026 Laura Navarro Lora | A local guide to my favorite city.</p>
+  </footer>
+
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script>
+    // Markers Data
+    const locations = [
+      { id: "alte", name: "Alte Pinakothek", coords: [48.1483, 11.5700], emoji: "🖼️", gmaps: "https://www.google.com/maps/search/?api=1&query=Alte+Pinakothek+Munich" },
+      { id: "moderne", name: "Pinakothek der Moderne", coords: [48.1471, 11.5723], emoji: "🎨", gmaps: "https://www.google.com/maps/search/?api=1&query=Pinakothek+der+Moderne+Munich" },
+      { id: "brandhorst", name: "Museum Brandhorst", coords: [48.1481, 11.5742], emoji: "🍭", gmaps: "https://www.google.com/maps/search/?api=1&query=Museum+Brandhorst+Munich" },
+      { id: "glypto", name: "Glyptothek", coords: [48.1464, 11.5658], emoji: "🏛️", gmaps: "https://www.google.com/maps/search/?api=1&query=Glyptothek+Munich" },
+      { id: "egypt", name: "Egyptian Museum", coords: [48.1479, 11.5721], emoji: "☥", gmaps: "https://www.google.com/maps/search/?api=1&query=Egyptian+Museum+Munich" },
+      { id: "national", name: "Bavarian National Museum", coords: [48.1431, 11.5911], emoji: "🏰", gmaps: "https://www.google.com/maps/search/?api=1&query=Bayerisches+Nationalmuseum" },
+      { id: "schack", name: "Sammlung Schack", coords: [48.1424, 11.5931], emoji: "🧚", gmaps: "https://www.google.com/maps/search/?api=1&query=Sammlung+Schack+Munich" },
+      { id: "valentin", name: "Valentin-Karlstadt-Musäum", coords: [48.1349, 11.5818], emoji: "🤡", gmaps: "https://www.google.com/maps/search/?api=1&query=Valentin-Karlstadt-Musäum" },
+      { id: "beer", name: "Beer & Oktoberfest Museum", coords: [48.1353, 11.5802], emoji: "🍺", gmaps: "https://www.google.com/maps/search/?api=1&query=Beer+and+Oktoberfest+Museum" },
+      { id: "potato", name: "The Potato Museum", coords: [48.1256, 11.6058], emoji: "🥔", gmaps: "https://www.google.com/maps/search/?api=1&query=Kartoffelmuseum+Munich" },
+      { id: "muca", name: "MUCA (Street Art)", coords: [48.1367, 11.5699], emoji: "🎨", gmaps: "https://www.google.com/maps/search/?api=1&query=MUCA+Munich" },
+      { id: "nsdoku", name: "NS-Dokumentationszentrum", coords: [48.1453, 11.5677], emoji: "⚖️", gmaps: "https://www.google.com/maps/search/?api=1&query=NS-Dokumentationszentrum+Munich" },
+      { id: "stuck", name: "Villa Stuck", coords: [48.1408, 11.5997], emoji: "⚜️", gmaps: "https://www.google.com/maps/search/?api=1&query=Villa+Stuck+Munich" },
+      { id: "maximiliansforum", name: "MaximiliansForum", coords: [48.1384, 11.5861], emoji: "🚇", gmaps: "https://www.google.com/maps/search/?api=1&query=MaximiliansForum+Munich" },
+      { id: "geo", name: "Geological Museum", coords: [48.1472, 11.5647], emoji: "💎", gmaps: "https://www.google.com/maps/search/?api=1&query=Geological+Museum+Munich" },
+      { id: "paleo", name: "Paleontological Museum", coords: [48.1418, 11.5583], emoji: "🦴", gmaps: "https://www.google.com/maps/search/?api=1&query=Paleontological+Museum+Munich" }
+    ];
+
+    // Initialize Map
+    const map = L.map('map').setView([48.145, 11.575], 13);
+
+    // Add Google Maps Light Tiles
+    L.tileLayer('https://mt1.google.com/vt/lyrs=m&x={x}&y={y}&z={z}', {
+      attribution: '&copy; Google Maps',
+      maxZoom: 20
+    }).addTo(map);
+
+    // Add Markers
+    locations.forEach(loc => {
+      const customIcon = L.divIcon({
+        html: `
+                        <div class="custom-emoji-marker">
+                            <div class="marker-circle">${loc.emoji}</div>
+                            <div class="marker-label">${loc.name}</div>
+                        </div>
+                    `,
+        className: '',
+        iconSize: [40, 60],
+        iconAnchor: [20, 60]
+      });
+
+      const marker = L.marker(loc.coords, { icon: customIcon }).addTo(map);
+
+      // Create Popup Content
+      const popupContent = `
+                    <div class="map-popup">
+                        <span class="map-popup-title">${loc.name}</span>
+                        <div class="map-popup-buttons">
+                            <a href="#${loc.id}" class="map-btn map-btn-primary">👇 Scroll to details</a>
+                            <a href="${loc.gmaps}" target="_blank" class="map-btn map-btn-secondary">🗺️ View on Google Maps</a>
+                        </div>
+                    </div>
+                `;
+
+      marker.bindPopup(popupContent, {
+        closeButton: false,
+        offset: [0, -40]
+      });
+
+      // Center on click
+      marker.on('click', function (e) {
+        map.setView(e.target.getLatLng(), 15, { animate: true });
+      });
+    });
+  </script>
+  <script src="../scrips.js"></script>
+</body>
+
+</html>
