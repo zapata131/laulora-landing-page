@@ -705,7 +705,8 @@ nav {
   margin-right: 0.5rem;
 }
 
-.guide-list-item h4 a {
+.guide-list-item h4 a,
+.gmaps-link {
   color: var(--primary-color);
   text-decoration: none;
   border-bottom: 2px solid var(--secondary-color);
@@ -716,7 +717,8 @@ nav {
   padding-bottom: 2px;
 }
 
-.guide-list-item h4 a::after {
+.guide-list-item h4 a::after,
+.gmaps-link::after {
   content: "\f3c5";
   font-family: "Font Awesome 6 Free";
   font-weight: 900;
@@ -724,7 +726,8 @@ nav {
   color: var(--secondary-color);
 }
 
-.guide-list-item h4 a:hover {
+.guide-list-item h4 a:hover,
+.gmaps-link:hover {
   background-color: rgba(212, 175, 55, 0.1);
   border-bottom-color: var(--primary-color);
 }
