@@ -991,6 +991,34 @@ html {
   .guide-content {
     padding: 2rem 1.5rem;
   }
+.comparison-grid {
+  grid-template-columns: 1fr !important;
+}
+}
+
+.comparison-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.comparison-card {
+  margin: 0;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  border-left: 4px solid var(--secondary-color);
+  background: var(--card-bg);
+}
+
+.comparison-card.buy {
+  background: rgba(45, 90, 78, 0.05);
+  border-left-color: var(--primary-color);
+}
+
+.comparison-card.dont-buy {
+  background: rgba(255, 69, 58, 0.05);
+  border-left-color: #ff453a;
 }
 /* Responsive */
 @media (max-width: 768px) {
