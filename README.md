@@ -4,7 +4,7 @@ A modern, responsive personal website and travel guide built with a "vanilla" te
 
 ## 🚀 Overview
 
-This repository contains the source code for [lauranavarro.me](https://lauranavarro.me) (or your specific domain). It is designed to be lightweight, fast-loading, and easy to maintain without the overhead of modern JavaScript frameworks.
+This repository contains the source code for [laulora.com](https://laulora.com). It is designed to be lightweight, fast-loading, and easy to maintain without the overhead of modern JavaScript frameworks.
 
 ### Key Sections
 -   **About / Hero**: Introduction and high-level professional summary.
