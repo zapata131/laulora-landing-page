@@ -238,24 +238,24 @@
     <script>
         // Markers Data
         const locations = [
-            { id: "straubinger", name: "Straubinger", coords: [48.1326, 11.5702], emoji: "🥩", gmaps: "https://www.google.com/maps/search/?api=1&query=Wirtshaus+Zum+Straubinger" },
-            { id: "krablergarten", name: "Krablergarten", coords: [48.1309, 11.5647], emoji: "🥩", gmaps: "https://www.google.com/maps/search/?api=1&query=Andy%27s+Krablergarten" },
-            { id: "steinheil", name: "Steinheil 16", coords: [48.1481, 11.5606], emoji: "🥩", gmaps: "https://www.google.com/maps/search/?api=1&query=Steinheil+16" },
-            { id: "dreimuhlen", name: "Drei Mühlen", coords: [48.1256, 11.5601], emoji: "🥨", gmaps: "https://www.google.com/maps/search/?api=1&query=Augustiner+Drei+Mühlen" },
-            { id: "rischart", name: "Rischart Marienplatz", coords: [48.1373, 11.5755], emoji: "🥨", gmaps: "https://www.google.com/maps/search/?api=1&query=Rischart+Marienplatz" },
-            { id: "augustiner", name: "Augustiner Keller", coords: [48.1432, 11.5517], emoji: "🍺", gmaps: "https://www.google.com/maps/search/?api=1&query=Augustiner+Keller" },
-            { id: "chinatower", name: "Chinesischer Turm", coords: [48.1525, 11.5920], emoji: "🍺", gmaps: "https://www.google.com/maps/search/?api=1&query=Biergarten+am+Chinesischen+Turm" },
-            { id: "hofbraukeller", name: "Hofbräukeller", coords: [48.1362, 11.5939], emoji: "🍺", gmaps: "https://www.google.com/maps/search/?api=1&query=Hofbräukeller+München" },
-            { id: "minihofbrau", name: "Mini-Hofbräuhaus", coords: [48.1691, 11.6033], emoji: "🍺", gmaps: "https://www.google.com/maps/search/?api=1&query=Mini-Hofbräuhaus+Englischer+Garten" },
+            { id: "straubinger", name: "Straubinger", coords: [48.13123, 11.57144], emoji: "🥩", gmaps: "https://www.google.com/maps/search/?api=1&query=Wirtshaus+Zum+Straubinger" },
+            { id: "krablergarten", name: "Krablergarten", coords: [48.12722, 11.56500], emoji: "🥩", gmaps: "https://www.google.com/maps/search/?api=1&query=Andy%27s+Krablergarten" },
+            { id: "steinheil", name: "Steinheil 16", coords: [48.14921, 11.56441], emoji: "🥩", gmaps: "https://www.google.com/maps/search/?api=1&query=Steinheil+16" },
+            { id: "dreimuhlen", name: "Drei Mühlen", coords: [48.12191, 11.55831], emoji: "🥨", gmaps: "https://www.google.com/maps/search/?api=1&query=Augustiner+Drei+Mühlen" },
+            { id: "rischart", name: "Rischart Marienplatz", coords: [48.13735, 11.57551], emoji: "🥨", gmaps: "https://www.google.com/maps/search/?api=1&query=Rischart+Marienplatz" },
+            { id: "augustiner", name: "Augustiner Keller", coords: [48.14350, 11.55157], emoji: "🍺", gmaps: "https://www.google.com/maps/search/?api=1&query=Augustiner+Keller" },
+            { id: "chinatower", name: "Chinesischer Turm", coords: [48.15208, 11.59231], emoji: "🍺", gmaps: "https://www.google.com/maps/search/?api=1&query=Biergarten+am+Chinesischen+Turm" },
+            { id: "hofbraukeller", name: "Hofbräukeller", coords: [48.13454, 11.59363], emoji: "🍺", gmaps: "https://www.google.com/maps/search/?api=1&query=Hofbräukeller+München" },
+            { id: "minihofbrau", name: "Mini-Hofbräuhaus", coords: [48.17410, 11.61510], emoji: "🍺", gmaps: "https://www.google.com/maps/search/?api=1&query=Mini-Hofbräuhaus+Englischer+Garten" },
             { id: "verdi", name: "Verdi Supermarkt", coords: [48.13647, 11.55782], emoji: "🍟", gmaps: "https://www.google.com/maps/search/?api=1&query=Verdi+Supermarkt+Munich" },
             { id: "turkitch", name: "Türkitch", coords: [48.14875, 11.57482], emoji: "🍟", gmaps: "https://www.google.com/maps/search/?api=1&query=Türkitch+Munich" },
-            { id: "bergwolf", name: "Bergwolf", coords: [48.1306, 11.5714], emoji: "🍟", gmaps: "https://www.google.com/maps/search/?api=1&query=Bergwolf+Munich" },
-            { id: "burgermeister", name: "Burgermeister", coords: [48.1614, 11.5866], emoji: "🍔", gmaps: "https://www.google.com/maps/search/?api=1&query=Burgermeister+Münchner+Freiheit" },
-            { id: "takumi", name: "TAKUMI", coords: [48.1501, 11.5605], emoji: "🍜", gmaps: "https://www.google.com/maps/search/?api=1&query=Takumi+Munchen+Gabelsbergerstrasse+77" },
-            { id: "chitu", name: "Chi Tu", coords: [48.1285, 11.5746], emoji: "🍲", gmaps: "https://www.google.com/maps/search/?api=1&query=Chi+Tu+Munich" },
-            { id: "maxbeef", name: "Max Beef Noodles", coords: [48.1408, 11.5586], emoji: "🍜", gmaps: "https://www.google.com/maps/search/?api=1&query=Max+Beef+Noodles+Munich" },
-            { id: "89anju", name: "89Anju", coords: [48.1378, 11.5815], emoji: "🇰🇷", gmaps: "https://www.google.com/maps/search/?api=1&query=89Anju+Korean+Street+Food" },
-            { id: "chaat", name: "Chaat Junction", coords: [48.1340, 11.5796], emoji: "🍛", gmaps: "https://www.google.com/maps/place/Chat+Junction/@48.13404,11.57962,17z/data=!3m1!4b1!4m6!3m5!1s0x479e75a50d2e2935:0xa9c9e5e7b2f6f2a!8m2!3d48.13404!4d11.57962!16s%2Fg%2F11fn77501n?entry=ttu" }
+            { id: "bergwolf", name: "Bergwolf", coords: [48.13025, 11.57551], emoji: "🍟", gmaps: "https://www.google.com/maps/search/?api=1&query=Bergwolf+Munich" },
+            { id: "burgermeister", name: "Burgermeister", coords: [48.16181, 11.58623], emoji: "🍔", gmaps: "https://www.google.com/maps/search/?api=1&query=Burgermeister+Münchner+Freiheit" },
+            { id: "takumi", name: "TAKUMI", coords: [48.14922, 11.56064], emoji: "🍜", gmaps: "https://www.google.com/maps/search/?api=1&query=Takumi+Munchen+Gabelsbergerstrasse+77" },
+            { id: "chitu", name: "Chi Tu", coords: [48.13061, 11.57467], emoji: "🍲", gmaps: "https://www.google.com/maps/search/?api=1&query=Chi+Tu+Munich" },
+            { id: "maxbeef", name: "Max Beef Noodles", coords: [48.13645, 11.57195], emoji: "🍜", gmaps: "https://www.google.com/maps/search/?api=1&query=Max+Beef+Noodles+Munich" },
+            { id: "89anju", name: "89Anju", coords: [48.15045, 11.56303], emoji: "🇰🇷", gmaps: "https://www.google.com/maps/search/?api=1&query=89Anju+Korean+Street+Food" },
+            { id: "chaat", name: "Chaat Junction", coords: [48.13328, 11.58135], emoji: "🍛", gmaps: "https://www.google.com/maps/place/Chat+Junction/@48.13328,11.58135,17z" }
         ];
 
         // Initialize Map
