@@ -1000,6 +1000,39 @@ html {
   }
 }
 
+/* App Download Buttons */
+.app-btn-group {
+  display: flex;
+  gap: 1rem;
+  margin: 1.5rem 0;
+  flex-wrap: wrap;
+}
+
+.app-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  background: var(--primary-color);
+  color: white !important;
+  padding: 0.8rem 1.5rem;
+  border-radius: 1rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: var(--transition);
+  border: 1px solid transparent;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.app-btn:hover {
+  background: var(--secondary-color);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  color: white !important;
+}
+
+.app-btn i {
+  font-size: 1.2rem;
+}
 /* Ensure Leaflet attribution is subtle */
 .leaflet-control-attribution {
   font-size: 0.6rem !important;
