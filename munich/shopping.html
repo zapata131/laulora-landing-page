@@ -7,6 +7,9 @@
     <title>Shopping in Munich | Laura Navarro Lora</title>
     <link rel="icon" type="image/png" href="../favicon.png">
     <link rel="stylesheet" href="../style.css">
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
     <script src="https://kit.fontawesome.com/d4c858243e.js" crossorigin="anonymous"></script>
 </head>
 
@@ -32,50 +35,134 @@
     </div>
     <header class="guide-header">
         <div class="container">
-            <a href="index.html" class="back-link">← Back to Guide Hub</a>
-            <h2>Shopping & Essentials</h2>
-            <p>Walking streets, local markets, and where to buy groceries without spending too much.</p>
+            <a href="index.html" class="back-link">← Back to Munich Hub</a>
+            <h2>🛒 Shopping & Local Essentials</h2>
+            <p>Staying at <a href="https://www.google.com/maps/search/?api=1&query=Wombat's+City+Hostel+Munich" target="_blank"
+                    class="text-link" style="color: white; border-bottom-color: white;">Wombat's City Hostel</a> puts you in the
+                middle of everything. But in Munich, timing is everything: almost all shops <strong>close by 8:00 PM</strong> and
+                are <strong>strictly closed on Sundays</strong>.</p>
         </div>
     </header>
 
+    <nav class="guide-nav">
+        <div class="container">
+            <ul class="guide-nav-list">
+                <li><a href="must-sees.html" class="guide-nav-link">📍 Essentials</a></li>
+                <li><a href="eat.html" class="guide-nav-link">🍺 Eat & Drink</a></li>
+                <li><a href="transport.html" class="guide-nav-link">🚇 Transport</a></li>
+                <li><a href="museums.html" class="guide-nav-link">🏛️ Museums</a></li>
+                <li><a href="secrets.html" class="guide-nav-link">🤫 Secrets</a></li>
+                <li><a href="day-trips.html" class="guide-nav-link">⛰️ Day Trips</a></li>
+                <li><a href="shopping.html" class="guide-nav-link active">🛒 Shopping</a></li>
+            </ul>
+        </div>
+    </nav>
+
     <main class="guide-content">
+        <!-- Map Section -->
+        <section class="guide-item" style="border-bottom: none; margin-bottom: 2rem; padding-bottom: 0; border: none;">
+            <div id="map" style="height: 400px; border-radius: 1.5rem; box-shadow: var(--shadow);"></div>
+        </section>
+
         <section class="guide-item">
-            <h3>🛒 Essentials & Groceries</h3>
+            <h3>🥗 Groceries & The "Sunday Strategy"</h3>
+            <p>If you’re planning to use the guest kitchen, you need to know where to find food when the rest of the city is shut
+                down.</p>
             <ul class="guide-list">
-                <li class="guide-list-item">
-                    <h4>Budget Supermarkets:</h4>
-                    <p>Look for <strong>ALDI</strong>, <strong>LIDL</strong>, or <strong>Netto</strong> for the best
-                        prices. <strong>Kaufland</strong> near the station is also great.</p>
+                <li class="guide-list-item" id="lidl_schwan">
+                    <h4><a href="https://www.google.com/maps/search/?api=1&query=Lidl+Schwanthalerstraße+31+Munich" target="_blank">LIDL
+                            (Schwanthalerstraße)</a>:</h4>
+                    <p>A 2-minute walk from the hostel. This is the "backpackers' pantry" for cheap pasta, snacks, and beer.</p>
                 </li>
-                <li class="guide-list-item">
-                    <h4>Drugstores (dm & Rossmann):</h4>
-                    <p>Best for toiletries and healthy snacks. Their store brands are actually really good.</p>
-                    <div class="guide-pro-tip">
-                        <strong>🛑 The Sunday Closure</strong>
-                        <p>Most shops are closed on Sundays! Plan ahead and shop on Saturday.</p>
-                    </div>
+                <li class="guide-list-item" id="kaufland_stachus">
+                    <h4><a href="https://www.google.com/maps/search/?api=1&query=Kaufland+Karlsplatz+Munich" target="_blank">Kaufland
+                            (Stachus)</a>:</h4>
+                    <p>Located in the basement of the Galeria building at Karlsplatz. It’s huge and has a better international selection
+                        than the smaller shops.</p>
+                </li>
+                <li class="guide-list-item" id="dm">
+                    <h4><a href="https://www.google.com/maps/search/?api=1&query=dm-drogerie+markt+Munich+Stachus" target="_blank">dm &
+                            Rossmann</a>:</h4>
+                    <p>These are drugstores (not pharmacies). They are the best place for cheap toiletries and surprisingly good organic
+                        snacks (nuts, oat milk, vegan spreads).</p>
+                </li>
+                </ul>
+                
+                <div class="guide-pro-tip">
+                <strong>🚨 Emergency Sunday Shopping</strong>
+                <p>If it's Sunday and you're hungry, these are your only options near the hostel. Expect crowds!</p>
+                <ul class="guide-list" style="margin-top: 1rem;">
+                    <li class="guide-list-item" id="edeka_hbf">
+                        <h4>EDEKA (Hauptbahnhof):</h4>
+                        <p>In the main station mezzanine. Open daily until 11:00 PM.</p>
+                    </li>
+                    <li class="guide-list-item" id="lidl_zob">
+                        <h4>LIDL (ZOB/Hackerbrücke):</h4>
+                        <p>At the Central Bus Station, about a 10-minute walk from Wombat's. It is the cheapest place to get groceries
+                            on a Sunday.</p>
+                    </li>
+                </ul>
+                </div>
+        </section>
+        
+        <section class="guide-item">
+            <h3>🛍️ Iconic Shopping Streets</h3>
+        
+            <ul class="guide-list">
+                <li class="guide-list-item" id="kaufinger">
+                    <h4><a href="https://www.google.com/maps/search/?api=1&query=Kaufingerstraße+Munich"
+                            target="_blank">Kaufingerstraße & Neuhauser Straße</a>:</h4>
+                    <p>The main pedestrian artery connecting Marienplatz and Stachus. You’ll find major brands (Zara, H&M, TK
+                        Maxx) and department stores like Oberpollinger.</p>
+                </li>
+                <li class="guide-list-item" id="funf_hofe">
+                    <h4><a href="https://www.google.com/maps/search/?api=1&query=Fünf+Höfe+Munich" target="_blank">Fünf Höfe
+                            (Five Courtyards)</a>:</h4>
+                    <p>An architectural masterpiece on Theatinerstraße with hanging gardens and a sphere sculpture by Olafur
+                        Eliasson. Upscale brands, but worth the walk for the art.</p>
+                </li>
+                <li class="guide-list-item" id="maximilian">
+                    <h4><a href="https://www.google.com/maps/search/?api=1&query=Maximilianstraße+Munich"
+                            target="_blank">Maximilianstraße</a>:</h4>
+                    <p>Munich’s "Royal Avenue." Even if a luxury bag isn't in the budget, the Neo-Gothic architecture and cars
+                        make it the best people-watching spot. It leads to the stunning Maximilianeum.</p>
                 </li>
             </ul>
         </section>
 
         <section class="guide-item">
-            <h3>🛍️ Where to Shop</h3>
+            <h3>🏺 Speciality & Gourmet Shops</h3>
             <ul class="guide-list">
-                <li class="guide-list-item">
-                    <h4>Kaufingerstraße:</h4>
-                    <p>A long pedestrian zone with all major international brands, connecting Marienplatz and Stachus.
+                <li class="guide-list-item" id="dallmayr">
+                    <h4>Dallmayr Delicatessen:</h4>
+                    <p>A world-famous luxury food hall. Walk through to see the porcelain coffee urns and the famous crawfish fountains.
                     </p>
                 </li>
-                <li class="guide-list-item">
-                    <h4>Viktualienmarkt:</h4>
-                    <p>The best spot for local honey, traditional mustard, and artisanal food products.</p>
+                <li class="guide-list-item" id="manufactum">
+                    <h4>Manufactum:</h4>
+                    <p>They sell "things that still work"—traditional, high-quality goods. Their in-house bakery, <em>brot&butter</em>,
+                        is fantastic.</p>
                 </li>
-                <li class="guide-list-item">
-                    <h4>Maximilianstraße:</h4>
-                    <p>Luxury shops and nice architecture. It's the most expensive street in the city.</p>
+                <li class="guide-list-item" id="viktualienmarkt">
+                    <h4>Viktualienmarkt:</h4>
+                    <p>The place for artisanal mustard, honey, and the famous <strong>spicy pickle</strong> from the <em>Saure Ecke</em>
+                        stall. (Pro tip: take your snacks to the central beer garden!).</p>
                 </li>
             </ul>
         </section>
+<section class="guide-item">
+    <h3>💡 Pro Tips</h3>
+    <div class="guide-pro-tip" style="border-left-color: var(--primary-color);">
+        <strong>🍾 The Bottle Deposit (Pfand)</strong>
+        <p>Do not throw away your plastic or glass bottles! Most have a <strong>€0.08 to €0.25 deposit</strong>. Take
+            them to the "Pfand" machines at LIDL or EDEKA for cash back.</p>
+    </div>
+    <div class="guide-pro-tip" style="margin-top: 1.5rem; border-left-color: #f43f5e;">
+        <strong>⚔️ Saturday is War</strong>
+        <p>Everyone in the city shops on Saturday because of the Sunday closure. Try to shop on Friday or Saturday
+            morning to avoid the massive checkout lines.</p>
+    </div>
+</section>
     </main>
 
     <footer
@@ -83,6 +170,97 @@
         <p>&copy; 2026 Laura Navarro Lora | A hand-picked collection of local Munich tips.</p>
     </footer>
 
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script>
+        // Markers Data
+        const locations = [
+            { id: "wombats", name: "Wombat's City Hostel", coords: [48.1388, 11.5585], emoji: "🏠", gmaps: "https://www.google.com/maps/search/?api=1&query=Wombat's+City+Hostel+Munich" },
+            { id: "lidl_schwan", name: "LIDL Schwanthalerstr.", coords: [48.13717, 11.55996], emoji: "🛒", gmaps: "https://www.google.com/maps/search/?api=1&query=Lidl+Schwanthalerstraße+31+Munich" },
+            { id: "kaufland_stachus", name: "Kaufland (Stachus)", coords: [48.1390, 11.5658], emoji: "🏙️", gmaps: "https://www.google.com/maps/search/?api=1&query=Kaufland+Karlsplatz+Munich" },
+            { id: "dm", name: "dm & Rossmann", coords: [48.1395, 11.5645], emoji: "🧴", gmaps: "https://www.google.com/maps/search/?api=1&query=dm-drogerie+markt+Munich+Stachus" },
+            { id: "edeka_hbf", name: "EDEKA (Hbf)", coords: [48.1413, 11.5604], emoji: "🥖", gmaps: "https://www.google.com/maps/search/?api=1&query=Edeka+Ernst+Hauptbahnhof+Munich" },
+            { id: "lidl_zob", name: "LIDL (ZOB)", coords: [48.1426, 11.5526], emoji: "🚌", gmaps: "https://www.google.com/maps/search/?api=1&query=Lidl+Hackerbrücke+Munich" },
+            { id: "kaufinger", name: "Kaufingerstraße", coords: [48.1375, 11.5720], emoji: "🛍️", gmaps: "https://www.google.com/maps/search/?api=1&query=Kaufingerstraße+Munich" },
+            { id: "funf_hofe", name: "Fünf Höfe", coords: [48.1407, 11.5754], emoji: "🏢", gmaps: "https://www.google.com/maps/search/?api=1&query=Fünf+Höfe+Munich" },
+            { id: "maximilian", name: "Maximilianstraße", coords: [48.1384, 11.5837], emoji: "💎", gmaps: "https://www.google.com/maps/search/?api=1&query=Maximilianstraße+Munich" },
+            { id: "dallmayr", name: "Dallmayr", coords: [48.1383, 11.5773], emoji: "☕", gmaps: "https://www.google.com/maps/search/?api=1&query=Dallmayr+Delicatessen+Munich" },
+            { id: "manufactum", name: "Manufactum", coords: [48.1382, 11.5770], emoji: "🛠️", gmaps: "https://www.google.com/maps/search/?api=1&query=Manufactum+Munich" },
+            { id: "viktualienmarkt", name: "Viktualienmarkt", coords: [48.1351, 11.5761], emoji: "🥒", gmaps: "https://www.google.com/maps/search/?api=1&query=Viktualienmarkt+Munich" }
+        ];
+
+        // Initialize Map
+        const map = L.map('map').setView([48.1388, 11.5585], 14);
+
+        // Add Google Maps Light Tiles
+        L.tileLayer('https://mt1.google.com/vt/lyrs=m&x={x}&y={y}&z={z}', {
+            attribution: '&copy; Google Maps',
+            maxZoom: 20
+        }).addTo(map);
+
+        // Add Markers and track bounds
+        const markers = [];
+        locations.forEach(loc => {
+            const customIcon = L.divIcon({
+                html: `
+                            <div class="custom-emoji-marker">
+                                <div class="marker-circle">${loc.emoji}</div>
+                                <div class="marker-label">${loc.name}</div>
+                            </div>
+                        `,
+                className: '',
+                iconSize: [40, 60],
+                iconAnchor: [20, 60]
+            });
+
+            const marker = L.marker(loc.coords, { icon: customIcon }).addTo(map);
+            markers.push(marker);
+
+            // Create Popup Content
+            const popupContent = `
+                        <div class="map-popup">
+                            <span class="map-popup-title">${loc.name}</span>
+                            <div class="map-popup-buttons">
+                                <a href="#${loc.id}" class="map-btn map-btn-primary">👇 Scroll to details</a>
+                                <a href="${loc.gmaps}" target="_blank" class="map-btn map-btn-secondary">🗺️ View on Google Maps</a>
+                            </div>
+                        </div>
+                    `;
+
+            marker.bindPopup(popupContent, {
+                closeButton: false,
+                offset: [0, -40]
+            });
+
+            // Center on click
+            marker.on('click', function (e) {
+                map.setView(e.target.getLatLng(), 15, { animate: true });
+            });
+        });
+
+        // Fit map to markers
+        if (markers.length > 0) {
+            const group = new L.featureGroup(markers);
+            map.fitBounds(group.getBounds().pad(0.1));
+        }
+
+        // Manual scroll handler for map popup links
+        document.addEventListener('click', function (e) {
+            if (e.target.classList.contains('map-btn-primary') && e.target.getAttribute('href').startsWith('#')) {
+                e.preventDefault();
+                const id = e.target.getAttribute('href').slice(1);
+                const element = document.getElementById(id);
+                if (element) {
+                    element.scrollIntoView({ behavior: 'smooth' });
+                    // On mobile, close popup to see content better
+                    if (window.innerWidth < 768) {
+                        map.closePopup();
+                    }
+                }
+            }
+        });
+    </script>
     <script src="../scrips.js"></script>
 </body>
 

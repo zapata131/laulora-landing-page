@@ -618,6 +618,66 @@ nav {
   margin: 0 auto;
 }
 
+/* Guide Sub-Navigation */
+.guide-nav {
+  background: var(--card-bg);
+  border-bottom: 1px solid var(--border-color);
+  padding: 0.75rem 0;
+  position: sticky;
+  top: 80px;
+  /* Below main nav */
+  z-index: 900;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.guide-nav-list {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  overflow-x: auto;
+  padding: 0 2rem;
+  scrollbar-width: none;
+  /* Hide scrollbar for Firefox */
+}
+
+.guide-nav-list::-webkit-scrollbar {
+  display: none;
+  /* Hide scrollbar for Chrome/Safari */
+}
+
+.guide-nav-link {
+  white-space: nowrap;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 2rem;
+  transition: var(--transition);
+}
+
+.guide-nav-link:hover {
+  background: rgba(6, 78, 59, 0.05);
+  color: var(--primary-color);
+}
+
+.guide-nav-link.active {
+  background: var(--primary-color);
+  color: var(--white) !important;
+}
+
+[data-theme="dark"] .guide-nav-link:hover {
+  background: rgba(212, 175, 55, 0.1);
+  color: var(--primary-color);
+}
+
+@media (max-width: 768px) {
+  .guide-nav-list {
+    justify-content: flex-start;
+  }
+}
 .guide-content {
   max-width: 800px;
   margin: 0 auto;

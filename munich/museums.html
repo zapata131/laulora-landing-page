@@ -33,13 +33,28 @@
       <p>None of these are affiliate links, but you can always tip me personally or through <a href="#">ko-fi</a>.</p>
     </div>
   </div>
-  <header class="guide-header">
-    <div class="container">
-      <a href="index.html" class="back-link">← Back to Guide Hub</a>
-      <h2>Munich Museums Guide</h2>
-      <p>World-class art for €1, quirky niche collections, and powerful history.</p>
-    </div>
-  </header>
+    <header class="guide-header">
+      <div class="container">
+            <a href="index.html" class="back-link">← Back to Munich Hub</a>
+            <h2>🏛️ Munich Museums Guide</h2>
+            <p>Munich is an art powerhouse. Whether you want Old Masters, modern design, or racing cars, there's a world-class
+              collection waiting for you.</p>
+            </div>
+            </header>
+
+    <nav class="guide-nav">
+      <div class="container">
+        <ul class="guide-nav-list">
+          <li><a href="must-sees.html" class="guide-nav-link">📍 Essentials</a></li>
+          <li><a href="eat.html" class="guide-nav-link">🍺 Eat & Drink</a></li>
+          <li><a href="transport.html" class="guide-nav-link">🚇 Transport</a></li>
+          <li><a href="museums.html" class="guide-nav-link active">🏛️ Museums</a></li>
+          <li><a href="secrets.html" class="guide-nav-link">🤫 Secrets</a></li>
+          <li><a href="day-trips.html" class="guide-nav-link">⛰️ Day Trips</a></li>
+          <li><a href="shopping.html" class="guide-nav-link">🛒 Shopping</a></li>
+        </ul>
+      </div>
+    </nav>
 
   <main class="guide-content">
     <!-- Map Section -->
@@ -73,49 +88,49 @@
             </tr>
           </thead>
           <tbody>
-            <tr>
+            <tr id="alte">
               <td><strong><a href="https://www.google.com/maps/search/?api=1&query=Alte+Pinakothek+Munich"
                     target="_blank" class="gmaps-link">Alte Pinakothek</a></strong></td>
               <td>€9</td>
               <td>The "Old Masters" (Da Vinci, Rubens, Dürer).</td>
               <td>Grand and massive.</td>
             </tr>
-            <tr>
+            <tr id="moderne">
               <td><strong><a href="https://www.google.com/maps/search/?api=1&query=Pinakothek+der+Moderne+Munich"
                     target="_blank" class="gmaps-link">Pinakothek der Moderne</a></strong></td>
               <td>€10</td>
               <td>4-in-1: Modern Art, Design, Architecture.</td>
               <td>Bright and airy.</td>
             </tr>
-            <tr>
+            <tr id="brandhorst">
               <td><strong><a href="https://www.google.com/maps/search/?api=1&query=Museum+Brandhorst+Munich"
                     target="_blank" class="gmaps-link">Museum Brandhorst</a></strong></td>
               <td>€7</td>
               <td>Pop Art (Warhol) and Cy Twombly.</td>
               <td>Vibrant and colorful.</td>
             </tr>
-            <tr>
+            <tr id="glypto">
               <td><strong><a href="https://www.google.com/maps/search/?api=1&query=Glyptothek+Munich"
                     target="_blank" class="gmaps-link">Glyptothek</a></strong></td>
               <td>€6</td>
               <td>Ancient Greek and Roman statues.</td>
               <td>Temple vibes & cafe.</td>
             </tr>
-            <tr>
+            <tr id="egypt">
               <td><strong><a href="https://www.google.com/maps/search/?api=1&query=Egyptian+Museum+Munich"
                     target="_blank" class="gmaps-link">Egyptian Museum</a></strong></td>
               <td>€7</td>
               <td>5,000 years of history underground.</td>
               <td>Mysterious and minimalist.</td>
             </tr>
-            <tr>
+            <tr id="national">
               <td><strong><a href="https://www.google.com/maps/search/?api=1&query=Bayerisches+Nationalmuseum"
                     target="_blank" class="gmaps-link">Bavarian National Museum</a></strong></td>
               <td>€7</td>
               <td>Knight's armor and royal furniture.</td>
               <td>Bavarian history.</td>
             </tr>
-            <tr>
+            <tr id="schack">
               <td><strong><a href="https://www.google.com/maps/search/?api=1&query=Sammlung+Schack+Munich"
                     target="_blank" class="gmaps-link">Sammlung Schack</a></strong></td>
               <td>€4</td>
@@ -131,6 +146,27 @@
         <p>These spots get busy on Sundays! Go right when they open (usually 10:00 AM) or during the lunch hour to avoid
           the crowds.</p>
       </div>
+    </section>
+
+    <section class="guide-item">
+      <h3>🚀 Major Highlights</h3>
+      <p style="margin-bottom: 1.5rem; color: var(--text-muted);">These are the giants. If you only have time for one or two
+        big museums, these are the heavy hitters that define Munich's scientific and engineering soul.</p>
+      <ul class="guide-list">
+        <li class="guide-list-item" id="bmw">
+          <h4><a href="https://www.google.com/maps/search/?api=1&query=BMW+Museum+Munich" target="_blank">BMW
+              Museum</a>:</h4>
+          <p>A futuristic "silver bowl" building dedicated to the history of the car. It’s not just for gearheads; the
+            architecture and design evolution are genuinely fascinating. (Note: The free BMW Welt is right next door—check the
+            details in the <a href="must-sees.html#bmw_welt" class="text-link">Essentials page</a>). (~€17)</p>
+        </li>
+        <li class="guide-list-item" id="deutsches">
+          <h4><a href="https://www.google.com/maps/search/?api=1&query=Deutsches+Museum+Munich" target="_blank">Deutsches
+              Museum</a>:</h4>
+          <p>The world’s largest museum of science and technology. You could spend three days here and not see
+            everything. From vintage planes to massive ships and mining tunnels, it's an absolute powerhouse. (~€16)</p>
+        </li>
+      </ul>
     </section>
 
     <section class="guide-item">
@@ -168,7 +204,7 @@
           <h4><a href="https://www.google.com/maps/search/?api=1&query=NS-Dokumentationszentrum+Munich"
               target="_blank">NS-Dokumentationszentrum</a>:</h4>
           <p>A sobering, well-designed museum on the site of the former Nazi headquarters. It’s a powerful place for
-            reflection and is free every day.</p>
+            reflection and is free every day. (It's located very close to the Pinakotheken mentioned above).</p>
         </li>
         <li class="guide-list-item" id="stuck">
           <h4><a href="https://www.google.com/maps/search/?api=1&query=Villa+Stuck+Munich" target="_blank">Palais Stuck
@@ -216,7 +252,9 @@
       { id: "stuck", name: "Villa Stuck", coords: [48.1408, 11.5997], emoji: "⚜️", gmaps: "https://www.google.com/maps/search/?api=1&query=Villa+Stuck+Munich" },
       { id: "maximiliansforum", name: "MaximiliansForum", coords: [48.1384, 11.5861], emoji: "🚇", gmaps: "https://www.google.com/maps/search/?api=1&query=MaximiliansForum+Munich" },
       { id: "geo", name: "Geological Museum", coords: [48.1472, 11.5647], emoji: "💎", gmaps: "https://www.google.com/maps/search/?api=1&query=Geological+Museum+Munich" },
-      { id: "paleo", name: "Paleontological Museum", coords: [48.1418, 11.5583], emoji: "🦴", gmaps: "https://www.google.com/maps/search/?api=1&query=Paleontological+Museum+Munich" }
+      { id: "paleo", name: "Paleontological Museum", coords: [48.1418, 11.5583], emoji: "🦴", gmaps: "https://www.google.com/maps/search/?api=1&query=Paleontological+Museum+Munich" },
+      { id: "bmw", name: "BMW Museum", coords: [48.1768, 11.5591], emoji: "🏎️", gmaps: "https://www.google.com/maps/search/?api=1&query=BMW+Museum+Munich" },
+      { id: "deutsches", name: "Deutsches Museum", coords: [48.1301, 11.5833], emoji: "⚙️", gmaps: "https://www.google.com/maps/search/?api=1&query=Deutsches+Museum+Munich" }
     ];
 
     // Initialize Map
@@ -265,6 +303,22 @@
         map.setView(e.target.getLatLng(), 15, { animate: true });
       });
     });
+
+  // Manual scroll handler for map popup links
+  document.addEventListener('click', function (e) {
+    if (e.target.classList.contains('map-btn-primary') && e.target.getAttribute('href').startsWith('#')) {
+      e.preventDefault();
+      const id = e.target.getAttribute('href').slice(1);
+      const element = document.getElementById(id);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+        // On mobile, close popup to see content better
+        if (window.innerWidth < 768) {
+          map.closePopup();
+        }
+      }
+    }
+  });
   </script>
   <script src="../scrips.js"></script>
 </body>
