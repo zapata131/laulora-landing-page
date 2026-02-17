@@ -267,7 +267,8 @@ nav {
 }
 
 .nav-container {
-  width: var(--container-width);
+  width: 100%;
+    max-width: var(--container-width);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -326,13 +327,16 @@ nav {
 
 /* Mobile Nav Links */
 @media (max-width: 768px) {
+  nav {
+      height: 60px;
+    }
   .nav-links {
     display: flex;
     position: absolute;
-    top: 80px;
+    top: 60px;
     right: -100%;
     width: 100%;
-    height: calc(100vh - 80px);
+    height: calc(100vh - 60px);
       background: var(--bg-color);
       flex-direction: column;
       align-items: center;
@@ -349,7 +353,10 @@ nav {
     .hamburger {
       display: flex;
     }
-    }
+.guide-disclaimer {
+  margin-top: 60px;
+}
+}
 
 /* Theme Toggle Styles */
 .theme-toggle {
@@ -674,9 +681,95 @@ nav {
 }
 
 @media (max-width: 768px) {
+  .guide-nav {
+      top: 60px;
+      padding: 0;
+      overflow: visible;
+      width: 100%;
+      background: var(--bg-color);
+      border-bottom: 2px solid var(--primary-color);
+      z-index: 999;
+    }
+  
+    .guide-nav .container {
+      width: 100%;
+      margin: 0;
+      padding: 0;
+    }
   .guide-nav-list {
+    display: flex;
+      flex-direction: column;
+      gap: 0;
+      padding: 0;
+      width: 100%;
+    }
+    
+    /* Closed state: show only active item as a button */
+    .guide-nav:not(.open) .guide-nav-list {
+      height: 60px;
+      overflow: hidden;
+    }
+    
+    /* Open state: overlay the content */
+    .guide-nav.open .guide-nav-list {
+      position: absolute;
+      top: 100%;
+      /* Below the 'button' */
+      left: 0;
+      background: var(--card-bg);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+      z-index: 1001;
+      height: auto;
+      border-radius: 0 0 1.5rem 1.5rem;
+      overflow: hidden;
+    }
+    
+    .guide-nav-list li {
+      width: 100%;
+      display: block;
+    }
+    
+    .guide-nav-link {
+      width: 100%;
     justify-content: flex-start;
+    padding: 1.2rem 2rem;
+      border-radius: 0;
+      border-bottom: 1px solid var(--border-color);
+      display: flex;
+      font-size: 1rem;
+      background: var(--card-bg);
+      color: var(--text-color);
+    }
+    
+    .guide-nav-link.active {
+      background: var(--primary-color);
+      color: var(--white) !important;
+      font-weight: 700;
+      order: -2;
+      /* Ensure it's the toggle trigger at the top */
+    }
+    
+    .guide-nav-link.active::after {
+      content: "\f078";
+      /* fa-chevron-down */
+      font-family: "Font Awesome 6 Free";
+      font-weight: 900;
+      position: absolute;
+      right: 2rem;
+      transition: transform 0.3s ease;
+    }
+    
+    .guide-nav.open .guide-nav-link.active::after {
+      transform: rotate(180deg);
+    }
+    
+    /* When CLOSED, hide everything except the active link */
+    .guide-nav:not(.open) .guide-nav-list li:not(:has(.active)) {
+      display: none;
   }
+/* When OPEN, hide the active link inside the dropdown to avoid redundancy, 
+     but wait, we need it as the 'toggle' trigger. 
+     Let's keep the active link at the top as the 'header'. */
 }
 .guide-content {
   max-width: 800px;

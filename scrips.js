@@ -127,3 +127,20 @@ document.addEventListener("mousemove", (e) => {
         sparkle.remove();
     }, 1000);
 });
+
+// Guide Nav Toggle (Mobile)
+document.addEventListener("click", (e) => {
+    const guideNav = document.querySelector(".guide-nav");
+    const activeLink = document.querySelector(".guide-nav-link.active");
+
+    if (guideNav && activeLink && window.innerWidth < 768) {
+        // Only toggle if we clicked the active link itself or a child of it
+        if (activeLink.contains(e.target)) {
+            e.preventDefault(); // Prevent page reload/jump
+            guideNav.classList.toggle("open");
+        } else if (guideNav.classList.contains("open") && !guideNav.contains(e.target)) {
+            // Close if clicking outside when open
+            guideNav.classList.remove("open");
+        }
+    }
+});
