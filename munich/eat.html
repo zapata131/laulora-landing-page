@@ -38,7 +38,8 @@
             <a href="index.html" class="back-link">← Back to Guide Hub</a>
             <h2>Eat & Drink Like a Local</h2>
             <p>Welcome to Munich! Since you’re staying at the Hauptbahnhof, you’re in the perfect spot to explore the
-                city's best food, from traditional Bavarian places to late-night kebabs.</p>
+                city's best food. (I also mention some of my favorite market eats in the <a href="must-sees.html"
+                    class="text-link">Essentials page</a>).</p>
         </div>
     </header>
 
@@ -56,7 +57,7 @@
         <hr style="border: none; border-top: 1px solid var(--border-color); margin: 2rem 0;">
 
         <!-- The Schnitzel Guide -->
-        <section class="guide-item">
+        <section class="guide-item" id="schnitzel">
             <h3>🥩 The Schnitzel Guide</h3>
             <p style="margin-bottom: 1rem; font-style: italic;">While the <em>Wiener Schnitzel</em> (veal) is
                 technically Austrian, Munich has perfected its own version. The <strong>Münchner Schnitzel</strong> is
@@ -89,7 +90,7 @@
         </section>
 
         <!-- Bavarian Breakfast -->
-        <section class="guide-item">
+        <section class="guide-item" id="breakfast">
             <h3>🥨 Bavarian Breakfast (Weißwurstfrühstück)</h3>
             <p style="margin-bottom: 1rem; font-style: italic;">A true local breakfast consists of <em>Weißwurst</em>
                 (white veal sausage), a soft pretzel, and sweet mustard. It should be eaten before noon!</p>
@@ -110,10 +111,11 @@
         </section>
 
         <!-- Beer Garden Tradition -->
-        <section class="guide-item">
+        <section class="guide-item" id="beergarden">
             <h3>🍺 The Beer Garden Tradition</h3>
             <p style="margin-bottom: 1rem; color: var(--primary-color); font-weight: 500;">The Golden Rule: By law, you
-                are allowed to bring your own food, but you must buy your drinks from the brewery.</p>
+                are allowed to bring your own food, but you must buy your drinks from the brewery. (Learn about the history of this in
+                the <a href="must-sees.html#chinese_turm" class="text-link">Essentials page</a>).</p>
 
             <ul class="guide-list">
                 <li class="guide-list-item" id="augustiner">
@@ -152,7 +154,7 @@
         </section>
 
         <!-- Asian Flavors & Spice -->
-        <section class="guide-item">
+        <section class="guide-item" id="asian">
             <h3>🌶️ Asian Flavors & Spice</h3>
             <p style="margin-bottom: 1rem; font-style: italic;">Munich has good traditional food, but sometimes you
                 need a break from the bread and potatoes. I love spice, and these are my go-to spots for Asian
@@ -178,7 +180,7 @@
                 <li class="guide-list-item" id="89anju">
                     <h4><a href="https://www.google.com/maps/search/?api=1&query=89Anju+Korean+Street+Food"
                             target="_blank">89Anju</a>:</h4>
-                    <p>A fun Korean spot with street food and snacks. Perfect for groups. (P.S. You can also ask
+                    <p>A fun Korean spot with street food and snacks. Perfect for groups. (P.S. If you're a fan, you can also ask
                         me about any k-pop!)</p>
                 </li>
                 <li class="guide-list-item" id="chaat">
@@ -191,7 +193,7 @@
         </section>
 
         <!-- Quick Bites & Late Night -->
-        <section class="guide-item">
+        <section class="guide-item" id="quickbites">
             <h3>🍟 Quick Bites & Late Night</h3>
 
             <ul class="guide-list">
@@ -302,6 +304,22 @@
                 map.setView(e.target.getLatLng(), 15, { animate: true });
             });
         });
+
+    // Manual scroll handler for map popup links
+    document.addEventListener('click', function (e) {
+        if (e.target.classList.contains('map-btn-primary') && e.target.getAttribute('href').startsWith('#')) {
+            e.preventDefault();
+            const id = e.target.getAttribute('href').slice(1);
+            const element = document.getElementById(id);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+                // On mobile, close popup to see content better
+                if (window.innerWidth < 768) {
+                    map.closePopup();
+                }
+            }
+        }
+    });
     </script>
     <script src="../scrips.js"></script>
 </body>
