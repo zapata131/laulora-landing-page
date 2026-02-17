@@ -12,9 +12,12 @@
   --text-color: #111827;
   --text-muted: #4b5563;
   --white: #ffffff;
+  --card-bg: #ffffff;
+    --border-color: rgba(0, 0, 0, 0.05);
   /* Typography */
   --font-body: 'Inter', sans-serif;
   --font-heading: 'Playfair Display', serif;
+
   /* Spacing */
   --section-padding: 5rem 2rem;
   --container-width: 1100px;
@@ -32,20 +35,48 @@
   /* Match shadow to primary gold */
   --bg-color: #061a14;
   /* Deep emerald background */
-  --text-color: #f9fafb;
-  /* Neutral off-white */
-  --text-muted: #9ca3af;
+  --text-color: #f1f5f9;
+    /* Brighter off-white for better contrast */
+    --text-muted: #94a3b8;
   /* Neutral muted gray */
   --white: #0b2d23;
   /* Forest green cards */
   --card-bg: #0b2d23;
-    --border-color: rgba(212, 175, 55, 0.1);
+  --border-color: rgba(212, 175, 55, 0.15);
   --shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
 }
 
-:root {
-  --card-bg: #ffffff;
-  --border-color: rgba(0, 0, 0, 0.05);
+[data-theme="dark"] .btn-outline {
+  background: transparent !important;
+  border-color: var(--primary-color) !important;
+  color: var(--primary-color) !important;
+}
+
+[data-theme="dark"] .btn-outline:hover {
+  background-color: var(--primary-color) !important;
+  color: #061a14 !important;
+  /* Dark emerald for contrast on gold button */
+}
+
+[data-theme="dark"] footer {
+  background-color: var(--bg-color) !important;
+  color: var(--text-color) !important;
+  border-top: 1px solid var(--border-color);
+}
+
+[data-theme="dark"] footer a {
+  color: var(--primary-color) !important;
+}
+
+[data-theme="dark"] .guide-header {
+  background: linear-gradient(135deg, #061a14, #0b2d23);
+  border-bottom: 1px solid var(--border-color);
+}
+
+[data-theme="dark"] .guide-header h2,
+[data-theme="dark"] .guide-header p,
+[data-theme="dark"] .guide-header .back-link {
+  color: var(--primary-color) !important;
 }
 [data-theme="kawaii"] {
   --primary-color: #ff9aa2;
@@ -61,6 +92,18 @@
   cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" style="font-size:20px"><text y="20">✨</text></svg>'), auto;
 }
 
+[data-theme="dark"] .hero p {
+  color: var(--text-color) !important;
+}
+
+[data-theme="dark"] .hostel-section {
+  background-color: var(--card-bg) !important;
+  border-color: var(--border-color) !important;
+}
+
+[data-theme="dark"] .hostel-section h3 {
+  color: var(--primary-color) !important;
+}
 [data-theme="kawaii"] h1::before {
   content: "🌸 ";
 }
@@ -814,12 +857,13 @@ nav {
 }
 
 .guide-pro-tip {
-  background: var(--card-bg);
+  background: var(--white);
   padding: 1.5rem;
   border-radius: 1rem;
   border-left: 4px solid var(--secondary-color);
   margin-top: 1.5rem;
   font-size: 1rem;
+  color: var(--text-color);
 }
 
 .guide-pro-tip>strong:first-child {
@@ -1534,4 +1578,29 @@ html {
   .section-title {
     display: none !important;
   }
+}
+/* Footer Styles */
+footer {
+  background-color: var(--primary-color);
+  color: var(--white);
+  text-align: center;
+  padding: 2rem;
+  margin-top: 4rem;
+}
+
+footer a {
+  color: var(--secondary-color);
+  font-weight: 600;
+}
+
+/* Hostel Section on Munich Hub */
+.hostel-section {
+  background-color: var(--white);
+  border: 1px solid var(--border-color);
+}
+
+.hostel-section h3 {
+  color: var(--primary-color);
+  font-family: var(--font-heading);
+  font-size: 1.8rem;
 }
