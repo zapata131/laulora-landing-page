@@ -1395,9 +1395,12 @@ html {
   
   .print-header a {
     text-decoration: underline !important;
-      /* Make link obvious */
-      color: #064e3b !important;
-      /* Dark green to match theme but visible */
+    color: #0000EE !important;
+      /* Standard Link Blue */
+      cursor: pointer !important;
+      pointer-events: auto !important;
+      position: relative !important;
+      z-index: 9999 !important;
   }
   
         /* Sidebar (Top Section) - Compact Linear */
