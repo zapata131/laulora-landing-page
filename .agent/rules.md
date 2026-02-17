@@ -15,4 +15,3 @@ This directory contains persistent instructions and workflows for AI agents work
     *   **Avoid**: Overly formal structure ("A true...", "Looking for...", "If you want..."), excessive explaining of common things, and corporate-toned enthusiasm.
     *   **Style**: Use a personal, human tone (Mexican expat/friendly local). Be punchy, direct, and slightly informal.
     *   **No Em-dashes**: Minimize the use of em-dashes for sentence transitions; use simple punctuation instead.
-19: 7.  **Always Commit**: Ensuring all changes are committed before ending a session is mandatory. Never leave uncommitted work.
