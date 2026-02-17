@@ -18,6 +18,7 @@ This repository contains the source code for [laulora.com](https://laulora.com).
 -   **HTML5**: Semantic structure.
 -   **CSS3**: Custom styles using CSS Variables for theme management.
 -   **JavaScript (Vanilla)**: Theme toggling, interactive animations, and easter eggs.
+-   **Leaflet.js**: Powering interactive, high-performance maps with custom markers.
 -   **Font Awesome**: Integrated via CDN for high-quality iconography.
 -   **Google Fonts**: Inter, Playfair Display, and Quicksand.
 
@@ -29,14 +30,12 @@ This repository contains the source code for [laulora.com](https://laulora.com).
 The site supports three distinct visual modes:
 1.  **Light Mode**: Clean, professional, and high-readability.
 2.  **Dark Mode**: A deep emerald and gold palette for low-light environments.
-3.  **Kawaii Mode**: A secret, playful theme featuring pastel colors, cat icons, and a magical sparkle trail effect.
+3.  **Kawaii Mode**: A secret, playful theme featuring pastel colors, cat icons, and a magical sparkle trail effect (Triple-click the star to toggle).
 
-### 🚇 Munich Insider Guide
-A dedicated section for Munich travel tips, including:
--   **Transportation**: 2026 pricing, Deutschlandticket guides, and regional travel warnings.
--   **Eat & Drink**: Local recommendations beyond the tourist traps.
--   **Must-Sees**: Interactive maps and curated sightseeing lists.
--   **No Affiliates**: A pure resource with a clear support disclaimer banner.
+-   **Interactive Maps**: Custom Leaflet implementations for all guide sections with auto-zoom and quick-links.
+-   **Mobile-First Navigation**: A smooth "Jump Menu" (Vertical Toggle) that replaces messy horizontal scrolls on mobile.
+-   **No Affiliates**: A pure resource with a clear support disclaimer (mentioning Wombat's reception).
+-   **De-AI-fied Content**: A strict project standard to maintain a personal, human-toned voice throughout.
 
 ### 🕵️ Easter Eggs
 -   **Kawaii Toggle**: Triple-click the star icon next to the location in the Hero section to toggle Kawaii mode.
@@ -52,13 +51,15 @@ A dedicated section for Munich travel tips, including:
 ├── .github/            # GitHub Actions (Automated Deployment)
 ├── img/                # Global image assets
 │   └── munich/         # Munich-specific photography
-├── munich/             # Munich Guide sub-pages
-│   ├── eat.html
+├── munich/             # Munich Guide sub-pages (Modular & De-AI-fied)
+│   ├── day-trips.html
+│   ├── eat-and-drink.html
+│   ├── essentials.html
+│   ├── getting-around.html
 │   ├── index.html
-│   ├── must-sees.html
-│   ├── secrets.html
-│   ├── shopping.html
-│   └── transport.html
+│   ├── local-secrets.html
+│   ├── museums.html
+│   └── shopping-and-groceries.html
 ├── index.html          # Main landing page
 ├── resume.html         # Professional resume page
 ├── style.css           # Global design system & theme variables
