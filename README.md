@@ -45,7 +45,6 @@ The site supports three distinct visual modes:
 -   **Interactive Maps**: Custom Leaflet implementations for all guide sections with auto-zoom and quick-links.
 -   **Mobile-First Navigation**: A smooth "Jump Menu" (Vertical Toggle) that replaces messy horizontal scrolls on mobile.
 -   **No Affiliates**: A pure resource with a clear support disclaimer (mentioning Wombat's reception).
--   **De-AI-fied Content**: A strict project standard to maintain a personal, human-toned voice throughout.
 
 ### 🕵️ Easter Eggs
 -   **Kawaii Toggle**: Triple-click the star icon next to the location in the Hero section to toggle Kawaii mode.
@@ -61,7 +60,7 @@ The site supports three distinct visual modes:
 ├── .github/            # GitHub Actions (Automated Deployment)
 ├── img/                # Global image assets
 │   └── munich/         # Munich-specific photography
-├── munich/             # Munich Guide sub-pages (Modular & De-AI-fied)
+├── munich/             # Munich Guide sub-pages (Modular)
 │   ├── day-trips.html
 │   ├── eat-and-drink.html
 │   ├── essentials.html
