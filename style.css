@@ -1300,13 +1300,14 @@ html {
 @media print {
   @page {
     size: A4 portrait;
-    margin: 1.5cm;
+    margin: 0.6cm;
+      /* Tighter margins */
   }
-
+  
   /* UNIVERSAL RESET */
-  *,
-  *::before,
-  *::after {
+        *,
+        *::before,
+        *::after {
     background: transparent !important;
     color: black !important;
     box-shadow: none !important;
@@ -1319,15 +1320,16 @@ html {
   }
 
   /* HTML/BODY Reset */
-  html,
-  body {
+        html,
+        body {
     width: 100% !important;
     height: auto !important;
     margin: 0 !important;
     padding: 0 !important;
     overflow: visible !important;
     background: white !important;
-    font-size: 10pt;
+    font-size: 9pt;
+      /* Reduced base font */
   }
 
   /* Hide specific web elements */
@@ -1344,19 +1346,19 @@ html {
   }
 
   /* Structural Resets */
-  .section,
-  .resume-grid,
-  .resume-main,
+        .section,
+        .resume-grid,
+        .resume-main,
   .resume-sidebar,
   .experience-item,
-  div,
-  ul,
-  li,
-  p,
-  h1,
-  h2,
-  h3,
-  h4 {
+        div,
+        ul,
+        li,
+        p,
+        h1,
+        h2,
+        h3,
+        h4 {
     display: block !important;
     width: auto !important;
     float: none !important;
@@ -1368,68 +1370,71 @@ html {
   }
 
   /* Custom Print Layout */
-
+  
   /* Header */
   .print-header {
     display: block !important;
     text-align: center;
     border-bottom: 2px solid black !important;
-    padding-bottom: 1rem !important;
-    margin-bottom: 2rem !important;
+    padding-bottom: 0.5rem !important;
+      /* Compact */
+      margin-bottom: 1rem !important;
+      /* Compact */
   }
-
+  
   .print-header h1 {
-    font-size: 24pt !important;
+    font-size: 20pt !important;
+      /* Smaller header */
     font-weight: bold !important;
-    margin-bottom: 0.5rem !important;
+    margin-bottom: 0.2rem !important;
   }
-
+  
   .print-header .contact-info {
-    font-size: 10pt !important;
+    font-size: 9pt !important;
   }
-
+  
   .print-header a {
-    text-decoration: none !important;
+    text-decoration: underline !important;
+      /* Make link obvious */
+      color: #064e3b !important;
+      /* Dark green to match theme but visible */
   }
-
-  /* --- LINEAR LAYOUT (Simplified) --- */
-
-  /* Sidebar (Top Section) */
+  
+        /* Sidebar (Top Section) - Compact Linear */
   .resume-sidebar {
     display: block !important;
-    /* Remove Grid causing issues */
-    border-bottom: 2px solid #ccc !important;
-    padding-bottom: 1.5rem !important;
-    margin-bottom: 2rem !important;
+    border-bottom: 1px solid #ccc !important;
+      padding-bottom: 0.5rem !important;
+      margin-bottom: 1rem !important;
     width: 100% !important;
   }
-
+  
   .resume-sidebar section {
     display: inline-block !important;
     width: 23% !important;
-    /* 4 columns approx */
     vertical-align: top !important;
     margin-right: 1% !important;
     margin-bottom: 0 !important;
   }
-
+  
   .resume-sidebar h3 {
-    font-size: 11pt !important;
+    font-size: 10pt !important;
     font-weight: bold !important;
     text-transform: uppercase !important;
-    margin-bottom: 0.5rem !important;
+    margin-bottom: 0.2rem !important;
     border-bottom: 1px solid black !important;
   }
-
+  
   .resume-sidebar ul {
     list-style: none !important;
     padding: 0 !important;
     margin: 0 !important;
   }
-
+  
   .resume-sidebar li {
-    font-size: 9pt !important;
-    line-height: 1.3 !important;
+    font-size: 8.5pt !important;
+      /* Smaller sidebar */
+      line-height: 1.2 !important;
   }
 
   /* Main (Experience Section) */
@@ -1437,60 +1442,88 @@ html {
     width: 100% !important;
     display: block !important;
   }
-
+  
   .resume-main::before {
     content: "EXPERIENCE" !important;
-    font-size: 14pt !important;
+    font-size: 12pt !important;
     font-weight: bold !important;
     border-bottom: 2px solid black !important;
-    margin-bottom: 1rem !important;
+    margin-bottom: 0.8rem !important;
     display: block !important;
   }
 
   /* Typography */
-  h2,
-  h3,
-  h4 {
+        h2,
+        h3,
+        h4 {
     color: #064e3b !important;
     page-break-after: avoid;
     break-after: avoid;
   }
-
+  
   h3 {
-    font-size: 1.1rem !important;
+    font-size: 1rem !important;
     font-weight: 700;
-    margin-bottom: 0.5rem !important;
+    margin-bottom: 0.3rem !important;
     border-bottom: none !important;
     color: #064e3b !important;
     text-transform: uppercase;
     letter-spacing: 0.5px;
   }
-
-  p,
-  li {
-    font-size: 10pt !important;
-    line-height: 1.4;
+    p,
+    li {
+      font-size: 9pt !important;
+        line-height: 1.3;
   }
-
+  
   .resume-main ul {
-    margin-top: 0.5rem !important;
+    margin-top: 0.2rem !important;
     padding-left: 1.2rem;
   }
-
+  
   .resume-main li {
-    margin-bottom: 0.3rem;
+    margin-bottom: 0.1rem;
   }
-
-  /* FORCE VISIBILITY */
+  
+        /* FORCE VISIBILITY & COMPACTNESS */
   .experience-item {
     display: block !important;
-    visibility: visible !important;
-    opacity: 1 !important;
-    page-break-inside: auto !important;
-    break-inside: auto !important;
-    margin-bottom: 2rem !important;
-    padding-bottom: 1rem !important;
-  }
+      visibility: visible !important;
+        opacity: 1 !important;
+        page-break-inside: auto !important;
+        break-inside: auto !important;
+    margin-bottom: 1rem !important;
+      /* Reduced from 2rem */
+      padding-bottom: 0.5rem !important;
+      /* Reduced from 1rem */
+      border-bottom: 1px solid #eee !important;
+    }
+    
+    .experience-item h4 {
+      font-size: 11pt !important;
+      font-weight: bold !important;
+      margin-bottom: 0.1rem !important;
+    }
+    
+    .experience-item .company {
+      font-size: 9pt !important;
+      font-style: italic !important;
+      margin-bottom: 0.3rem !important;
+    }
+    
+    .experience-item .company::after {
+      content: " | " attr(data-date);
+    }
+    
+    .experience-item ul {
+      padding-left: 1.2rem !important;
+      list-style-type: disc !important;
+    }
+    
+    .experience-item li {
+      display: list-item !important;
+      margin-bottom: 0.1rem;
+    }
 
   /* Hide standard titles */
   .section-title {
