@@ -58,6 +58,39 @@
   /* Dark emerald for contrast on gold button */
 }
 
+/* Dark Mode Readability Fixes */
+[data-theme="dark"] .marker-label {
+  color: #061a14 !important;
+  /* Dark text on gold marker */
+}
+
+[data-theme="dark"] .card-cta,
+[data-theme="dark"] .view-guide {
+  color: var(--primary-color) !important;
+  /* Gold text for links on dark green cards */
+  font-weight: 600;
+}
+
+[data-theme="dark"] .guide-pro-tip,
+[data-theme="dark"] .guide-warning,
+[data-theme="dark"] .comparison-card {
+  background: var(--card-bg) !important;
+  border-left-color: var(--primary-color) !important;
+}
+
+[data-theme="dark"] .guide-warning {
+  border: 1px solid var(--primary-color);
+}
+
+[data-theme="dark"] .guide-header h2,
+[data-theme="dark"] .guide-header p,
+[data-theme="dark"] .guide-header .back-link {
+  color: var(--primary-color) !important;
+}
+
+[data-theme="dark"] .guide-header {
+  background: linear-gradient(135deg, #061a14, #0b2d23);
+}
 [data-theme="dark"] footer {
   background-color: var(--bg-color) !important;
   color: var(--text-color) !important;
