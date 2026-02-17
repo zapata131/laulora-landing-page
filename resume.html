@@ -26,9 +26,27 @@
   </nav>
 
   <main class="section">
+    <!-- Print Only Header -->
+    <div class="print-header">
+      <h1>Laura Navarro Lora</h1>
+      <div class="contact-info">
+        <span>Sales Operations Analyst</span> •
+        <span>Munich, Germany</span> •
+        <span>navarlau@gmail.com</span> •
+        <span><a href="https://www.linkedin.com/in/laura-navarro-lora-4a9a7465/">LinkedIn</a></span>
+      </div>
+    </div>
+
     <header class="section-title">
       <h2>Professional Experience</h2>
-      <p>Sales Operations Analyst | Munich, Germany</p>
+      <p class="no-print">Sales Operations Analyst | Munich, Germany</p>
+      <div class="resume-actions" style="margin-top: 1rem; display: flex; gap: 1rem; justify-content: center;">
+        <a href="https://www.linkedin.com/in/laura-navarro-lora-4a9a7465/" target="_blank" class="btn btn-outline"
+          style="font-size: 0.9rem; padding: 0.5rem 1rem;"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+        <button onclick="window.print()" class="btn btn-outline"
+          style="font-size: 0.9rem; padding: 0.5rem 1rem; cursor: pointer;"><i class="fa-solid fa-file-pdf"></i> Save as
+          PDF</button>
+      </div>
     </header>
 
     <div class="resume-grid">
@@ -36,14 +54,24 @@
         <section style="margin-bottom: 2rem;">
           <h3>Skills</h3>
           <ul style="margin-top: 1rem;">
-            <li>• Analytical thinking</li>
-            <li>• Empathic communication</li>
-            <li>• People person</li>
-            <li>• SQL</li>
-            <li>• Goal setting</li>
-            <li>• Monitoring actions</li>
+            <li>• Pipeline Management</li>
+            <li>• Revenue Forecasting</li>
+            <li>• KPI Optimization</li>
+            <li>• Process Automation</li>
+            <li>• Strategic Planning</li>
+            <li>• Cross-functional Leadership</li>
           </ul>
         </section>
+<section style="margin-bottom: 2rem;">
+  <h3>Tools & Tech</h3>
+  <ul style="margin-top: 1rem;">
+    <li><i class="fa-solid fa-database" style="width: 20px; color: var(--secondary-color);"></i> SQL</li>
+    <li><i class="fa-solid fa-file-excel" style="width: 20px; color: var(--secondary-color);"></i> Excel (Advanced)</li>
+    <li><i class="fa-solid fa-chart-line" style="width: 20px; color: var(--secondary-color);"></i> CRM Systems</li>
+    <li><i class="fa-solid fa-chart-pie" style="width: 20px; color: var(--secondary-color);"></i> BI Dashboards</li>
+  </ul>
+</section>
+</section>
 
         <section style="margin-bottom: 2rem;">
           <h3>Languages</h3>
@@ -67,7 +95,7 @@
       <div class="resume-main">
         <div class="experience-item">
           <h4>Sales Operations Analyst</h4>
-          <p class="company">Conekta, Guadalajara (Mexico)</p>
+          <p class="company" data-date="2021 - PRESENT">Conekta, Guadalajara (Mexico)</p>
           <p class="date">2021 - PRESENT</p>
           <ul>
             <li><strong>Strategic Advising:</strong> Analyzed complex data streams to advise leadership on expansion
@@ -83,7 +111,7 @@
 
         <div class="experience-item">
           <h4>Business Planner</h4>
-          <p class="company">HP Inc., Guadalajara (Mexico)</p>
+          <p class="company" data-date="2016 - 2021">HP Inc., Guadalajara (Mexico)</p>
           <p class="date">2016 - 2021</p>
           <ul>
             <li><strong>Performance Analytics:</strong> Managed reporting tools to interpret complex data, delivering
@@ -99,7 +127,7 @@
 
         <div class="experience-item">
           <h4>Tactical Buyer</h4>
-          <p class="company">HP Inc., Guadalajara (Mexico)</p>
+          <p class="company" data-date="2013 - 2015">HP Inc., Guadalajara (Mexico)</p>
           <p class="date">2013 - 2015</p>
           <ul>
             <li><strong>Leadership:</strong> Stepped up as acting Procurement Specialist team lead, maintaining 100%
@@ -113,7 +141,7 @@
 
         <div class="experience-item">
           <h4>Reverse Logistics Coordinator</h4>
-          <p class="company">HP Inc., Guadalajara (Mexico)</p>
+          <p class="company" data-date="2011 - 2013">HP Inc., Guadalajara (Mexico)</p>
           <p class="date">2011 - 2013</p>
           <ul>
             <li><strong>International Operations:</strong> Managed logistics and customer service for HP repair
