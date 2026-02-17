@@ -1,6 +1,16 @@
 # Laura Navarro Lora - Personal Website & Munich Guide
 
+[![FTP Deploy](https://github.com/zapata131/laura-page/actions/workflows/deploy.yml/badge.svg)](https://github.com/zapata131/laura-page/actions/workflows/deploy.yml)
+![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=flat&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=flat&logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=flat&logo=javascript&logoColor=%23F7DF1E)
+![Leaflet](https://img.shields.io/badge/Leaflet-199900?style=flat&logo=Leaflet&logoColor=white)
+
 A modern, responsive personal website and travel guide built with a "vanilla" tech stack. This project showcases professional experience in Sales Operations and provides a deep-dive local guide for exploring Munich, Germany.
+
+[**Visit Live Site 🚀**](https://laulora.com)
+
+---
 
 ## 🚀 Overview
 
@@ -75,6 +85,7 @@ Automated deployment is handled via **GitHub Actions**.
 -   **Workflow**: `.github/workflows/deploy.yml`
 -   **Mechanism**: Every `push` to the `master` branch triggers an FTP sync to the production server.
 -   **Requirements**: Requires repository secrets: `FTP_SERVER`, `FTP_USERNAME`, `FTP_PASSWORD`.
+-   **Status**: [![FTP Deploy](https://github.com/zapata131/laura-page/actions/workflows/deploy.yml/badge.svg)](https://github.com/zapata131/laura-page/actions/workflows/deploy.yml)
 
 ---
 
@@ -82,7 +93,7 @@ Automated deployment is handled via **GitHub Actions**.
 
 This repository is "Agent-Ready." Persistent rules and workflows are stored in the [`.agent/`](file:///.agent/) directory. 
 
--   **Rules**: See [rules.md](file:///.agent/rules.md) for contribution guidelines (e.g., "Always commit after every feature").
+-   **Rules**: See [rules.md](file:///.agent/rules.md) for contribution guidelines.
 -   **Workflows**: Standardized processes for common tasks like feature commits.
 
 ---
