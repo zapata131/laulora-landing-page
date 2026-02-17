@@ -1391,6 +1391,8 @@ html {
   
   .print-header .contact-info {
     font-size: 9pt !important;
+    position: relative !important;
+      z-index: 1000 !important;
   }
   
   .print-header a {
