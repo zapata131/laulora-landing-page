@@ -1630,10 +1630,29 @@ footer a {
 .hostel-section {
   background-color: var(--white);
   border: 1px solid var(--border-color);
+  padding: 3rem 2rem;
+  border-radius: 1.5rem;
+  box-shadow: var(--shadow);
+  max-width: 800px;
+  margin: 4rem auto 2rem;
+  text-align: center;
+  transition: var(--transition);
+}
+
+.hostel-section:hover {
+  transform: translateY(-5px);
 }
 
 .hostel-section h3 {
   color: var(--primary-color);
   font-family: var(--font-heading);
-  font-size: 1.8rem;
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+}
+
+.hostel-section p {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  max-width: 600px;
+  margin: 0 auto 1.5rem;
 }
