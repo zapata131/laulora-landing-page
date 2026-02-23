@@ -42,10 +42,11 @@
   padding: 0;
   box-sizing: border-box;
 }
-  
+
 html {
   scroll-behavior: smooth;
 }
+
 body {
   font-family: var(--font-body);
   background-color: var(--bg-color);
@@ -53,6 +54,7 @@ body {
   line-height: 1.6;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
+
 /* --- 2. Typography --- */
 h1,
 h2,
@@ -61,7 +63,6 @@ h4 {
   font-family: var(--font-heading);
   line-height: 1.2;
 }
-
 a {
   text-decoration: none;
   color: inherit;
@@ -77,6 +78,7 @@ a {
 .text-link:hover {
   color: var(--secondary-color);
 }
+
 .print-header {
   display: none;
 }
@@ -395,8 +397,6 @@ nav {
 .nav-links {
   display: flex;
   gap: 2rem;
-  list-style: none;
-    /* Removed bullet points */
 }
 
 .nav-links a {
@@ -468,9 +468,7 @@ nav {
 .guide-disclaimer {
   margin-top: 60px;
   top: 60px;
-  padding: 1rem 1.5rem;
-    /* Increased padding for mobile */
-    font-size: 0.85rem;
+    padding: 0.75rem 1rem;
 }
 }
 
@@ -782,8 +780,6 @@ nav {
   gap: 1.5rem;
   overflow-x: auto;
   padding: 0 2rem;
-  list-style: none;
-    /* Removed bullet points */
   scrollbar-width: none;
   /* Hide scrollbar for Firefox */
 }
