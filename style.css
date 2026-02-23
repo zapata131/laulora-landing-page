@@ -1,30 +1,81 @@
-/* Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Quicksand:wght@400;500;600;700&display=swap');
+/**
+ * Laura Navarro Lora - Global Stylesheet
+ * 
+ * TABLE OF CONTENTS:
+ * 1. Variables & Reset
+ * 2. Typography
+ * 3. Layout & Structure
+ * 4. Navigation
+ * 5. Commmon Components (Buttons, Cards, Badges)
+ * 6. Theme Engines (Dark, Kawaii)
+ * 7. Animations
+ * 8. Media Queries (Mobile, Print)
+ */
 
+/* --- 1. Variables & Reset --- */
 :root {
   /* Color Palette */
   --primary-color: #064e3b;
-  /* Emerald Green */
   --secondary-color: #d4af37;
-  /* Soft Gold */
   --accent-color: #059669;
   --bg-color: #f9fafb;
   --text-color: #111827;
   --text-muted: #4b5563;
   --white: #ffffff;
   --card-bg: #ffffff;
-    --border-color: rgba(0, 0, 0, 0.05);
+  --border-color: rgba(0, 0, 0, 0.05);
+
   /* Typography */
   --font-body: 'Inter', sans-serif;
   --font-heading: 'Playfair Display', serif;
 
-  /* Spacing */
+  /* Spacing & Effects */
   --section-padding: 5rem 2rem;
   --container-width: 1100px;
   --shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
   --transition: all 0.3s ease;
-}
-
+  --radius: 1rem;
+  
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+  
+      html {
+        scroll-behavior: smooth;
+        
+                body {
+                  font-family: var(--font-body);
+                  background-color: var(--bg-color);
+                  color: var(--text-color);
+                  line-height: 1.6;
+                  transition: background-color 0.3s ease, color 0.3s ease;
+                }
+        
+                /* --- 2. Typography --- */
+                h1,
+                h2,
+                h3,
+                h4 {
+                  font-family: var(--font-heading);
+                  line-height: 1.2;
+                }
+        
+                a {
+                  text-decoration: none;
+                  color: inherit;
+                  transition: var(--transition);
+                }
+        
+                .text-link {
+                  text-decoration: underline;
+                  color: var(--primary-color);
+                  font-weight: 600;
+                }
+        
+                .text-link:hover {
+                  color: var(--secondary-color);
+                }
 .print-header {
   display: none;
 }
@@ -136,6 +187,10 @@
 
 [data-theme="dark"] .hostel-section h3 {
   color: var(--primary-color) !important;
+}
+[data-theme="dark"] .guide-disclaimer {
+  background: rgba(6, 26, 20, 0.95) !important;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.15) !important;
 }
 [data-theme="kawaii"] h1::before {
   content: "🌸 ";
@@ -274,56 +329,31 @@
   transform: scale(1.2) rotate(10deg);
   color: var(--secondary-color) !important;
 }
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+/* --- 3. Layout --- */
+.container {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 2rem;
 }
 
-html {
-  scroll-behavior: smooth;
+.section {
+  padding: var(--section-padding);
+  max-width: var(--container-width);
+  margin: 0 auto;
 }
 
-body {
-  font-family: var(--font-body);
-  background-color: var(--bg-color);
-    color: var(--text-color);
-    line-height: 1.6;
-    transition: background-color 0.3s ease, color 0.3s ease;
+.section-title {
+  text-align: center;
+  margin-bottom: 3rem;
 }
 
-/* Typography Helpers */
-h1,
-h2,
-h3,
-h4 {
-  font-family: var(--font-heading);
-  line-height: 1.2;
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
-  transition: var(--transition);
-}
-
-.text-link {
-  text-decoration: underline;
+.section-title h2 {
+  font-size: 2.5rem;
   color: var(--primary-color);
-  font-weight: 600;
 }
 
-.text-link:hover {
-  color: var(--secondary-color);
-}
-ul {
-  list-style: none;
-}
+/* --- End of Layout --- */
 
-img {
-  max-width: 100%;
-  display: block;
-}
 
 /* Navigation */
 nav {
@@ -500,7 +530,7 @@ nav {
   padding-top: 4rem;
   /* Reduce padding since nav offset is handled by disclaimer */
 }
-/* Buttons */
+/* --- 5. Common Components --- */
 .btn {
   display: inline-block;
   padding: 0.75rem 1.5rem;
@@ -508,6 +538,7 @@ nav {
   font-weight: 600;
   cursor: pointer;
   transition: var(--transition);
+  border: none;
 }
 
 .btn-primary {
@@ -524,6 +555,7 @@ nav {
 .btn-outline {
   border: 2px solid var(--primary-color);
   color: var(--primary-color);
+  background: transparent;
 }
 
 .btn-outline:hover {
@@ -531,6 +563,17 @@ nav {
   color: var(--white);
 }
 
+/* Scroll Animations */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.reveal-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
 /* Hero Section */
 .hero {
   min-height: 100vh;

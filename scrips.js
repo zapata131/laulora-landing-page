@@ -1,12 +1,16 @@
-// Theme Toggle Logic
+/**
+ * Laura Navarro Lora - Core Interactivity Engine
+ * Handles themes, mobile navigation, and animations.
+ */
+
+/* --- Theme Management --- */
 const themeToggle = document.getElementById("theme-toggle");
 const html = document.documentElement;
 const themeIcon = themeToggle ? themeToggle.querySelector("i") : null;
 
-// Set initial theme from storage or system preference
+// Initialize theme from storage or system preference
 const savedTheme = localStorage.getItem("theme");
-const systemTheme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
-const initialTheme = savedTheme || "light"; // Default to light as requested
+const initialTheme = savedTheme || "light";
 
 html.setAttribute("data-theme", initialTheme);
 updateThemeIcon(initialTheme);
@@ -25,17 +29,15 @@ if (themeToggle) {
 function updateThemeIcon(theme) {
     if (!themeIcon) return;
     if (theme === "dark") {
-        themeIcon.classList.remove("fa-moon");
-        themeIcon.classList.add("fa-sun");
+        themeIcon.className = "fa-solid fa-sun";
     } else if (theme === "kawaii") {
         themeIcon.className = "fa-solid fa-cat";
     } else {
-        themeIcon.classList.remove("fa-sun");
-        themeIcon.classList.add("fa-moon");
+        themeIcon.className = "fa-solid fa-moon";
     }
 }
 
-// Kawaii Easter Egg
+/* --- Kawaii Mode Easter Egg --- */
 const easterEgg = document.getElementById("easter-egg");
 let eggClicks = 0;
 let eggTimeout;
@@ -52,95 +54,96 @@ if (easterEgg) {
             html.setAttribute("data-theme", newTheme);
             updateThemeIcon(newTheme);
             eggClicks = 0;
-
-            if (newTheme === "kawaii") {
-                console.log("🌸 Kawaii Mode Activated! 🌸");
-            }
         } else {
-            eggTimeout = setTimeout(() => {
-                eggClicks = 0;
-            }, 500); // Reset if not clicked within 500ms
+            eggTimeout = setTimeout(() => eggClicks = 0, 500);
         }
     });
 }
 
-// Close menu when clicking a link
-document.querySelectorAll(".nav-links a").forEach(n => n.addEventListener("click", () => {
-    document.querySelector(".nav-links").classList.remove("open");
-    if (document.querySelector(".hamburger")) {
-        document.querySelector(".hamburger").classList.remove("open");
-    }
-}));
-
-// Simple scroll animation for cards
-const observerOptions = {
-    threshold: 0.1
-};
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.style.opacity = "1";
-            entry.target.style.transform = "translateY(0)";
-        }
-    });
-}, observerOptions);
-
-document.querySelectorAll(".tip-card, .experience-item").forEach(el => {
-    el.style.opacity = "0";
-    el.style.transform = "translateY(20px)";
-    el.style.transition = "all 0.6s ease-out";
-    observer.observe(el);
-});
-
-// Hamburger Menu Toggle
-function toggleMenu() {
-    const navLinks = document.querySelector(".nav-links");
-    const hamburger = document.querySelector(".hamburger");
-    if (navLinks) navLinks.classList.toggle("open");
-    if (hamburger) hamburger.classList.toggle("open");
-}
-
-// Sparkle Trail for Kawaii Mode
+// Sparkle trail effect for Kawaii mode
+let lastSparkle = 0;
 document.addEventListener("mousemove", (e) => {
-    if (document.documentElement.getAttribute("data-theme") !== "kawaii") return;
+    if (html.getAttribute("data-theme") !== "kawaii") return;
+
+    // Throttle for performance
+    const now = Date.now();
+    if (now - lastSparkle < 50) return;
+    lastSparkle = now;
 
     const sparkle = document.createElement("span");
     const symbols = ["✨", "🌸"];
     sparkle.innerHTML = symbols[Math.floor(Math.random() * symbols.length)];
-    sparkle.style.position = "fixed";
-    sparkle.style.left = e.clientX + "px";
-    sparkle.style.top = e.clientY + "px";
-    sparkle.style.pointerEvents = "none";
-    sparkle.style.fontSize = Math.random() * 20 + 10 + "px";
-    sparkle.style.zIndex = "9999";
-    sparkle.style.transition = "all 1s ease-out";
+    Object.assign(sparkle.style, {
+        position: "fixed",
+        left: `${e.clientX}px`,
+        top: `${e.clientY}px`,
+        pointerEvents: "none",
+        fontSize: `${Math.random() * 20 + 10}px`,
+        zIndex: "9999",
+        transition: "all 1s ease-out"
+    });
 
     document.body.appendChild(sparkle);
 
-    setTimeout(() => {
+    requestAnimationFrame(() => {
         sparkle.style.opacity = "0";
-        sparkle.style.transform = `translateY(${(Math.random() - 0.5) * 100}px) translateX(${(Math.random() - 0.5) * 100}px) scale(0)`;
-    }, 10);
+        sparkle.style.transform = `translate(${(Math.random() - 0.5) * 100}px, ${(Math.random() - 0.5) * 100}px) scale(0)`;
+    });
 
-    setTimeout(() => {
-        sparkle.remove();
-    }, 1000);
+    setTimeout(() => sparkle.remove(), 1000);
 });
 
-// Guide Nav Toggle (Mobile)
+/* --- Navigation Management --- */
+
+// Toggle mobile main navigation
+function toggleMenu() {
+    const elements = [".nav-links", ".hamburger"];
+    elements.forEach(selector => {
+        const el = document.querySelector(selector);
+        if (el) el.classList.toggle("open");
+    });
+}
+
+// Close mobile menu on link click
+document.querySelectorAll(".nav-links a").forEach(link => {
+    link.addEventListener("click", () => {
+        const elements = [".nav-links", ".hamburger"];
+        elements.forEach(selector => {
+            const el = document.querySelector(selector);
+            if (el) el.classList.remove("open");
+        });
+    });
+});
+
+// Mobile Guide Nav dropdown toggle
 document.addEventListener("click", (e) => {
     const guideNav = document.querySelector(".guide-nav");
     const activeLink = document.querySelector(".guide-nav-link.active");
 
     if (guideNav && activeLink && window.innerWidth < 768) {
-        // Only toggle if we clicked the active link itself or a child of it
         if (activeLink.contains(e.target)) {
-            e.preventDefault(); // Prevent page reload/jump
+            e.preventDefault();
             guideNav.classList.toggle("open");
-        } else if (guideNav.classList.contains("open") && !guideNav.contains(e.target)) {
-            // Close if clicking outside when open
+        } else if (!guideNav.contains(e.target)) {
             guideNav.classList.remove("open");
         }
     }
 });
+
+/* --- UI Enhancements --- */
+
+// Intersection Observer for fade-in animations
+const animObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            animObserver.unobserve(entry.target); // Animate only once
+        }
+    });
+}, { threshold: 0.1 });
+
+document.querySelectorAll(".tip-card, .experience-item, .hostel-section").forEach(el => {
+    el.classList.add("reveal-on-scroll");
+    animObserver.observe(el);
+});
+

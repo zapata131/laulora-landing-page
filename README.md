@@ -1,4 +1,4 @@
-# Laura Navarro Lora - Personal Website & Munich Guide
+# Laura Navarro Lora - Personal Portfolio & Munich Local Guide
 
 [![FTP Deploy](https://github.com/zapata131/laura-page/actions/workflows/deploy.yml/badge.svg)](https://github.com/zapata131/laura-page/actions/workflows/deploy.yml)
 ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=flat&logo=html5&logoColor=white)
@@ -6,9 +6,10 @@
 ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=flat&logo=javascript&logoColor=%23F7DF1E)
 ![Leaflet](https://img.shields.io/badge/Leaflet-199900?style=flat&logo=Leaflet&logoColor=white)
 
-A modern, responsive personal website and travel guide built with a "vanilla" tech stack. This project showcases professional experience in Sales Operations and provides a deep-dive local guide for exploring Munich, Germany.
+A high-performance, responsive personal website and travel guide. This project reflects professional standards in web design, modular CSS architecture, and performant vanilla JavaScript.
 
-[**Visit Live Site 🚀**](https://laulora.com)
+[**Explore the Live Site 🚀**](https://laulora.com)
+
 
 ---
 
@@ -36,15 +37,18 @@ This repository contains the source code for [laulora.com](https://laulora.com).
 
 ## ✨ Features
 
-### 🌈 Advanced Theme Engine
-The site supports three distinct visual modes:
-1.  **Light Mode**: Clean, professional, and high-readability.
-2.  **Dark Mode**: A deep emerald and gold palette for low-light environments.
-3.  **Kawaii Mode**: A secret, playful theme featuring pastel colors, cat icons, and a magical sparkle trail effect (Triple-click the star to toggle).
+### 🌈 Advanced Theme Engine & UI
+The site supports three high-fidelity visual modes with persistent state:
+1.  **Light Mode**: Ultra-clean, professional design focusing on readability.
+2.  **Dark Mode**: A premium emerald and gold aesthetic with carefully tuned contrast.
+3.  **Kawaii Mode**: A playful, animated easter egg theme featuring Sakura petals and sparkle trails.
 
--   **Interactive Maps**: Custom Leaflet implementations for all guide sections with auto-zoom and quick-links.
--   **Mobile-First Navigation**: A smooth "Jump Menu" (Vertical Toggle) that replaces messy horizontal scrolls on mobile.
--   **No Affiliates**: A pure resource with a clear support disclaimer (mentioning Wombat's reception).
+-   **Modular Design System**: Built with modern CSS Variables (custom properties) and a robust grid/flex-based layout.
+-   **Performance-Optimized Animations**: Uses `IntersectionObserver` and `requestAnimationFrame` for smooth, low-overhead visual effects.
+-   **Interactive Maps**: Custom Leaflet implementations with geo-aware markers, auto-zoom, and smooth-scroll deep links.
+-   **Sticky Utility Banner**: A persistent, semi-transparent disclaimer banner that remains accessible during long scrolls.
+-   **Mobile-First Jump Menu**: A responsive navigation system optimized for one-handed reach on travel-heavy devices.
+
 
 ### 🕵️ Easter Eggs
 -   **Kawaii Toggle**: Triple-click the star icon next to the location in the Hero section to toggle Kawaii mode.
