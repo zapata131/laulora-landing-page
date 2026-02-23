@@ -57,21 +57,14 @@ let eggTimeout;
 
 if (easterEgg) {
     easterEgg.addEventListener("click", () => {
-        eggClicks++;
-        clearTimeout(eggTimeout);
+        const currentTheme = html.getAttribute("data-theme");
+        const newTheme = currentTheme === "kawaii" ? (localStorage.getItem("theme") || "light") : "kawaii";
 
-        if (eggClicks === 3) {
-            const currentTheme = html.getAttribute("data-theme");
-            const newTheme = currentTheme === "kawaii" ? (localStorage.getItem("theme") || "light") : "kawaii";
-
-            html.setAttribute("data-theme", newTheme);
-            updateThemeIcon(newTheme);
-            eggClicks = 0;
-        } else {
-            eggTimeout = setTimeout(() => eggClicks = 0, 500);
-        }
+        html.setAttribute("data-theme", newTheme);
+        updateThemeIcon(newTheme);
     });
 }
+
 
 // Sparkle trail effect for Kawaii mode
 let lastSparkle = 0;
