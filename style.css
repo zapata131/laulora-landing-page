@@ -814,8 +814,7 @@ nav {
 
 @media (max-width: 768px) {
   .guide-nav {
-      top: 130px;
-        /* Adjusted for potentially taller disclaimer on mobile */
+      top: 60px;
       padding: 0;
       overflow: visible;
       width: 100%;
