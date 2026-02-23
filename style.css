@@ -35,47 +35,48 @@
   --shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
   --transition: all 0.3s ease;
   --radius: 1rem;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
   
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-  
-      html {
-        scroll-behavior: smooth;
-        
-                body {
-                  font-family: var(--font-body);
-                  background-color: var(--bg-color);
-                  color: var(--text-color);
-                  line-height: 1.6;
-                  transition: background-color 0.3s ease, color 0.3s ease;
-                }
-        
-                /* --- 2. Typography --- */
-                h1,
-                h2,
-                h3,
-                h4 {
-                  font-family: var(--font-heading);
-                  line-height: 1.2;
-                }
-        
-                a {
-                  text-decoration: none;
-                  color: inherit;
-                  transition: var(--transition);
-                }
-        
-                .text-link {
-                  text-decoration: underline;
-                  color: var(--primary-color);
-                  font-weight: 600;
-                }
-        
-                .text-link:hover {
-                  color: var(--secondary-color);
-                }
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  line-height: 1.6;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+/* --- 2. Typography --- */
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-heading);
+  line-height: 1.2;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: var(--transition);
+}
+
+.text-link {
+  text-decoration: underline;
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+.text-link:hover {
+  color: var(--secondary-color);
+}
 .print-header {
   display: none;
 }
