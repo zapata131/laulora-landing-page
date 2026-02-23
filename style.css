@@ -262,6 +262,40 @@ a {
   animation: kawaii-bg-move 15s ease infinite;
 }
 
+/* Kawaii Trigger (Star) Animation */
+@keyframes star-shine {
+
+  0%,
+  100% {
+    opacity: 0.3;
+    transform: scale(1);
+    filter: drop-shadow(0 0 0px var(--secondary-color));
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.5);
+    filter: drop-shadow(0 0 8px var(--secondary-color));
+  }
+}
+
+.kawaii-trigger {
+  font-size: 0.5rem;
+  cursor: pointer;
+  color: var(--secondary-color);
+  margin-left: 5px;
+  animation: star-shine 2s infinite ease-in-out;
+  transition: var(--transition);
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.kawaii-trigger:hover {
+  animation-play-state: paused;
+  transform: scale(2) rotate(20deg);
+  opacity: 1;
+  filter: drop-shadow(0 0 12px var(--secondary-color));
+}
 [data-theme="kawaii"] .hero-img {
   animation: kawaii-float 3s ease-in-out infinite;
 }
@@ -397,7 +431,9 @@ nav {
 .nav-links {
   display: flex;
   gap: 2rem;
+  list-style: none;
 }
+
 
 .nav-links a {
   font-weight: 500;
@@ -488,6 +524,15 @@ nav {
   font-size: 1.1rem;
 }
 
+[data-theme="kawaii"] .theme-toggle {
+  color: #ff9aa2;
+  border-color: #ff9aa2;
+}
+
+[data-theme="kawaii"] .theme-toggle:hover {
+  background: #ff9aa2;
+  color: white;
+}
 .theme-toggle:hover {
   background: var(--primary-color);
   color: var(--white);
@@ -776,7 +821,9 @@ nav {
   overflow-x: auto;
   padding: 0 2rem;
   scrollbar-width: none;
+  list-style: none;
   /* Hide scrollbar for Firefox */
+
 }
 
 .guide-nav-list::-webkit-scrollbar {

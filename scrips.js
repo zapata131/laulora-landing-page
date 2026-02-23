@@ -18,7 +18,15 @@ updateThemeIcon(initialTheme);
 if (themeToggle) {
     themeToggle.addEventListener("click", () => {
         const currentTheme = html.getAttribute("data-theme");
-        const newTheme = currentTheme === "light" ? "dark" : "light";
+        let newTheme;
+
+        if (currentTheme === "light") {
+            newTheme = "dark";
+        } else if (currentTheme === "dark") {
+            newTheme = "kawaii";
+        } else {
+            newTheme = "light";
+        }
 
         html.setAttribute("data-theme", newTheme);
         localStorage.setItem("theme", newTheme);
@@ -28,6 +36,9 @@ if (themeToggle) {
 
 function updateThemeIcon(theme) {
     if (!themeIcon) return;
+    // Remove all possible icons first
+    themeIcon.className = "";
+
     if (theme === "dark") {
         themeIcon.className = "fa-solid fa-sun";
     } else if (theme === "kawaii") {
@@ -35,7 +46,9 @@ function updateThemeIcon(theme) {
     } else {
         themeIcon.className = "fa-solid fa-moon";
     }
+
 }
+
 
 /* --- Kawaii Mode Easter Egg --- */
 const easterEgg = document.getElementById("easter-egg");
