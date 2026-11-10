@@ -1830,3 +1830,37 @@ footer a {
     overflow-wrap: anywhere;
   }
 }
+
+/* Guide maps */
+.hide-marker-labels .marker-label {
+  display: none;
+}
+
+.show-on-map {
+  display: flex;
+  width: fit-content;
+  align-items: center;
+  gap: 0.35rem;
+  margin: 0.6rem 0 0.25rem;
+  padding: 0.2rem 0.7rem;
+  font: inherit;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--primary-color);
+  background: transparent;
+  border: 1px solid var(--primary-color);
+  border-radius: 999px;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.show-on-map:hover,
+.show-on-map:focus-visible {
+  background: var(--primary-color);
+  color: var(--white);
+}
+
+[data-theme="dark"] .show-on-map:hover,
+[data-theme="dark"] .show-on-map:focus-visible {
+  color: var(--bg-color);
+}

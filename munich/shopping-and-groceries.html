@@ -95,13 +95,6 @@
                     <p>The closest big supermarket to the hostel. Go here if you're planning to cook in the guest
                         kitchen.</p>
                 </li>
-                <li class="guide-list-item" id="kaufland_stachus">
-                    <h4><a href="https://www.google.com/maps/search/?api=1&query=Kaufland+Karlsplatz+Munich"
-                            target="_blank">Kaufland
-                            (Stachus)</a></h4>
-                    <p>In the basement of the Galeria building at Karlsplatz. It's huge and has more international
-                        stuff than most shops. It's closed on Sundays, though.</p>
-                        </li>
                         <li class="guide-list-item" id="edeka_hbf">
                             <h4><a href="https://www.google.com/maps/search/?api=1&query=Edeka+Ernst+Munich+Hauptbahnhof" target="_blank">Edeka
                                     (Hauptbahnhof)</a></h4>
@@ -225,7 +218,6 @@
         const locations = [
             { id: "wombats", name: "Wombat's City Hostel", coords: [48.1388, 11.5585], emoji: "🏠", gmaps: "https://www.google.com/maps/search/?api=1&query=Wombat's+City+Hostel+Munich" },
             { id: "lidl_schwan", name: "LIDL Schwanthalerstr.", coords: [48.13717, 11.55996], emoji: "🛒", gmaps: "https://www.google.com/maps/search/?api=1&query=Lidl+Schwanthalerstraße+31+Munich" },
-            { id: "kaufland_stachus", name: "Kaufland (Stachus)", coords: [48.1390, 11.5658], emoji: "🏙️", gmaps: "https://www.google.com/maps/search/?api=1&query=Kaufland+Karlsplatz+Munich" },
             { id: "dm", name: "dm & Rossmann", coords: [48.1395, 11.5645], emoji: "🧴", gmaps: "https://www.google.com/maps/search/?api=1&query=dm-drogerie+markt+Munich+Stachus" },
             { id: "edeka_hbf", name: "EDEKA (Hbf)", coords: [48.1413, 11.5604], emoji: "🥖", gmaps: "https://www.google.com/maps/search/?api=1&query=Edeka+Ernst+Hauptbahnhof+Munich" },
             { id: "lidl_zob", name: "LIDL (ZOB)", coords: [48.1426, 11.5526], emoji: "🚌", gmaps: "https://www.google.com/maps/search/?api=1&query=Lidl+Hackerbrücke+Munich" },
@@ -238,7 +230,7 @@
         ];
 
         // Initialize Map
-        const map = L.map('map').setView([48.1388, 11.5585], 14);
+        const map = L.map('map').setView([48.1388, 11.5585], 14); window.guideMap = map; window.guideLabelZoom = 15;
 
         // Add Google Maps Light Tiles
         L.tileLayer('https://mt1.google.com/vt/lyrs=m&x={x}&y={y}&z={z}', {
@@ -261,7 +253,7 @@
                 iconAnchor: [20, 60]
             });
 
-            const marker = L.marker(loc.coords, { icon: customIcon }).addTo(map);
+            const marker = L.marker(loc.coords, { icon: customIcon }).addTo(map); (window.guideMarkers = window.guideMarkers || {})[loc.id] = marker;
             markers.push(marker);
 
             // Create Popup Content

@@ -366,7 +366,7 @@
         ];
 
         // Initialize Map
-        const map = L.map('map').setView([48.140, 11.570], 13);
+        const map = L.map('map').setView([48.140, 11.570], 13); window.guideMap = map; window.guideLabelZoom = 14;
 
         // Add Google Maps Light Tiles
         L.tileLayer('https://mt1.google.com/vt/lyrs=m&x={x}&y={y}&z={z}', {
@@ -389,7 +389,7 @@
                 iconAnchor: [20, 60]
             });
 
-            const marker = L.marker(loc.coords, { icon: customIcon }).addTo(map);
+            const marker = L.marker(loc.coords, { icon: customIcon }).addTo(map); (window.guideMarkers = window.guideMarkers || {})[loc.id] = marker;
             markers.push(marker);
 
             // Create Popup Content

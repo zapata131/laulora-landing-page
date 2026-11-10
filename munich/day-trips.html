@@ -148,7 +148,7 @@
         <li class="guide-list-item">
           <h4><a href="https://www.google.com/maps/search/?api=1&query=Wallbergbahn" target="_blank"
               class="gmaps-link">Wallberg Cable Car</a></h4>
-          <p>Takes you up to 1,722m, where you can see the whole lake and the Austrian mountains.</p>
+          <p>Takes you up to about 1,620m (the summit is 1,722m), where you can see the whole lake and the Austrian mountains.</p>
         </li>
         <li class="guide-list-item">
           <h4>Lakeside Path</h4>
@@ -317,7 +317,7 @@
     document.addEventListener('DOMContentLoaded', () => {
       // Map Initialization
       // Center zoomed out to show the Munich region (Upper Bavaria)
-      const map = L.map('map').setView([47.75, 11.55], 8);
+      const map = L.map('map').setView([47.75, 11.55], 8); window.guideMap = map;  window.guideFocusZoom = 12;
 
       // Add Google Maps Light Tiles
       L.tileLayer('https://mt1.google.com/vt/lyrs=m&x={x}&y={y}&z={z}', {
@@ -379,7 +379,7 @@
           iconAnchor: [20, 20]
         });
 
-        const marker = L.marker(loc.coords, { icon: customIcon }).addTo(map);
+        const marker = L.marker(loc.coords, { icon: customIcon }).addTo(map); (window.guideMarkers = window.guideMarkers || {})[loc.id] = marker;
 
         marker.bindPopup(`
                     <div style="font-family: inherit;">

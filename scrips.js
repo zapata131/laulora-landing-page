@@ -153,3 +153,40 @@ document.querySelectorAll(".tip-card, .experience-item, .hostel-section").forEac
     animObserver.observe(el);
 });
 
+
+/* --- Guide maps: "Show on map" buttons and less cluttered labels --- */
+// Pages with a Leaflet map expose window.guideMap and window.guideMarkers ({ id: marker }).
+window.addEventListener("load", () => {
+    const map = window.guideMap;
+    const markers = window.guideMarkers;
+    if (!map || !markers) return;
+
+    const mapEl = map.getContainer();
+
+    // Hide marker names when zoomed out, so the city centre isn't a pile of labels
+    if (window.guideLabelZoom) {
+        const toggleLabels = () =>
+            mapEl.classList.toggle("hide-marker-labels", map.getZoom() < window.guideLabelZoom);
+        map.on("zoomend", toggleLabels);
+        toggleLabels();
+    }
+
+    Object.entries(markers).forEach(([id, marker]) => {
+        const item = document.getElementById(id);
+        if (!item) return;
+        const heading = item.querySelector("h3, h4");
+        if (!heading) return;
+
+        const btn = document.createElement("button");
+        btn.type = "button";
+        btn.className = "show-on-map";
+        btn.innerHTML = '<i class="fa-solid fa-location-dot"></i> Show on map';
+        btn.addEventListener("click", () => {
+            mapEl.scrollIntoView({ behavior: "smooth", block: "center" });
+            map.setView(marker.getLatLng(), Math.max(map.getZoom(), window.guideFocusZoom || 15), { animate: true });
+            marker.openPopup();
+        });
+        const text = heading.parentElement === item ? item.querySelector(":scope > p") : null;
+        (text || heading).after(btn);
+    });
+});

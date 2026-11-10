@@ -219,7 +219,7 @@
                         me about any k-pop!)</p>
                 </li>
                 <li class="guide-list-item" id="chaat">
-                    <h4><a href="https://www.google.com/maps/place/Chat+Junction/@48.13404,11.57962,17z/data=!3m1!4b1!4m6!3m5!1s0x479e75a50d2e2935:0xa9c9e5e7b2f6f2a!8m2!3d48.13404!4d11.57962!16s%2Fg%2F11fn77501n?entry=ttu"
+                    <h4><a href="https://www.google.com/maps/search/?api=1&query=Chat+Junction+Zweibr%C3%BCckenstra%C3%9Fe+M%C3%BCnchen"
                             target="_blank">Chaat Junction</a></h4>
                     <p>A small place near Isartor. I go there when I'm craving something spicy.</p>
                 </li>
@@ -277,7 +277,7 @@
             { id: "rischart", name: "Rischart Marienplatz", coords: [48.13735, 11.57551], emoji: "🥨", gmaps: "https://www.google.com/maps/search/?api=1&query=Rischart+Marienplatz" },
             { id: "augustiner", name: "Augustiner Keller", coords: [48.14350, 11.55157], emoji: "🍺", gmaps: "https://www.google.com/maps/search/?api=1&query=Augustiner+Keller" },
             { id: "chinatower", name: "Chinesischer Turm", coords: [48.15208, 11.59231], emoji: "🍺", gmaps: "https://www.google.com/maps/search/?api=1&query=Biergarten+am+Chinesischen+Turm" },
-            { id: "hofbraukeller", name: "Hofbräukeller", coords: [48.13453, 11.59537], emoji: "🍺", gmaps: "https://www.google.com/maps/search/?api=1&query=Hofbräukeller+München" },
+            { id: "hofbraukeller", name: "Hofbräukeller", coords: [48.13365, 11.59385], emoji: "🍺", gmaps: "https://www.google.com/maps/search/?api=1&query=Hofbräukeller+München" },
             { id: "minihofbrau", name: "Mini-Hofbräuhaus", coords: [48.16701, 11.60763], emoji: "🍺", gmaps: "https://www.google.com/maps/search/?api=1&query=Mini-Hofbräuhaus+Englischer+Garten" },
             { id: "verdi", name: "Verdi Supermarkt", coords: [48.13647, 11.55782], emoji: "🍟", gmaps: "https://www.google.com/maps/search/?api=1&query=Verdi+Supermarkt+Munich" },
             { id: "turkitch", name: "Türkitch", coords: [48.14875, 11.57482], emoji: "🍟", gmaps: "https://www.google.com/maps/search/?api=1&query=Türkitch+Munich" },
@@ -287,11 +287,11 @@
             { id: "chitu", name: "Chi Tu", coords: [48.12822, 11.57606], emoji: "🍲", gmaps: "https://www.google.com/maps/search/?api=1&query=Chi+Tu+Munich" },
             { id: "maxbeef", name: "Max Beef Noodles", coords: [48.13402, 11.56660], emoji: "🍜", gmaps: "https://www.google.com/maps/search/?api=1&query=Max+Beef+Noodles+Munich" },
             { id: "89anju", name: "89Anju", coords: [48.14936, 11.56599], emoji: "🇰🇷", gmaps: "https://www.google.com/maps/search/?api=1&query=89Anju+Korean+Street+Food" },
-            { id: "chaat", name: "Chaat Junction", coords: [48.13344, 11.58375], emoji: "🍛", gmaps: "https://www.google.com/maps/place/Chat+Junction/@48.13344,11.58375,17z" }
+            { id: "chaat", name: "Chaat Junction", coords: [48.13344, 11.58375], emoji: "🍛", gmaps: "https://www.google.com/maps/search/?api=1&query=Chat+Junction+Zweibr%C3%BCckenstra%C3%9Fe+M%C3%BCnchen" }
         ];
 
         // Initialize Map
-        const map = L.map('map').setView([48.140, 11.570], 13);
+        const map = L.map('map').setView([48.140, 11.570], 13); window.guideMap = map; window.guideLabelZoom = 14;
 
         // Add Google Maps Light Tiles
         L.tileLayer('https://mt1.google.com/vt/lyrs=m&x={x}&y={y}&z={z}', {
@@ -313,7 +313,7 @@
                 iconAnchor: [20, 60]
             });
 
-            const marker = L.marker(loc.coords, { icon: customIcon }).addTo(map);
+            const marker = L.marker(loc.coords, { icon: customIcon }).addTo(map); (window.guideMarkers = window.guideMarkers || {})[loc.id] = marker;
 
             // Create Popup Content
             const popupContent = `
