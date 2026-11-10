@@ -176,7 +176,16 @@ a {
   --font-body: 'Quicksand', sans-serif;
     --font-heading: 'Quicksand', sans-serif;
   --shadow: 0 8px 20px rgba(255, 154, 162, 0.2);
-  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" style="font-size:20px"><text y="20">✨</text></svg>'), auto;
+  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" style="font-size:20px"><text y="20">✨</text></svg>') 12 12, auto;
+}
+
+/* Keep the normal hand cursor on anything clickable */
+[data-theme="kawaii"] a,
+[data-theme="kawaii"] button,
+[data-theme="kawaii"] .hamburger,
+[data-theme="kawaii"] .kawaii-trigger,
+[data-theme="kawaii"] .leaflet-interactive {
+  cursor: pointer;
 }
 
 [data-theme="dark"] .hero p {
@@ -1500,14 +1509,6 @@ html {
       grid-template-columns: 1fr;
     }
 
-    .nav-links {
-      display: none;
-    }
-
-    .hamburger {
-      display: block;
-    }
-
     .hero {
       padding-bottom: 4rem;
       padding-left: 1.5rem;
@@ -1815,4 +1816,17 @@ footer a {
   color: var(--text-muted);
   max-width: 600px;
   margin: 0 auto 1.5rem;
+}
+
+/* Anchor jumps land below the fixed nav + guide nav */
+.guide-item,
+.guide-list-item {
+  scroll-margin-top: 9rem;
+}
+
+@media (max-width: 768px) {
+  .guide-item h3 {
+    flex-wrap: wrap;
+    overflow-wrap: anywhere;
+  }
 }

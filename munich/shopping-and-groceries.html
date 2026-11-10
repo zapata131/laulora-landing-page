@@ -122,7 +122,7 @@
                 <strong>🚨 Emergency Sunday Shopping</strong>
                 <p>If it's Sunday and you're hungry, these are basically your only options near the hostel. Both get packed.</p>
                 <ul class="guide-list" style="margin-top: 1rem;">
-                    <li class="guide-list-item" id="edeka_hbf">
+                    <li class="guide-list-item" id="edeka_hbf_sunday">
                         <h4><a href="https://www.google.com/maps/search/?api=1&query=Edeka+Ernst+Hauptbahnhof+Munich"
                                 target="_blank">EDEKA
                                 (Hauptbahnhof)</a></h4>
@@ -164,7 +164,7 @@
                             target="_blank">Maximilianstraße</a></h4>
                     <p>Munich's "Royal Avenue." Even if a luxury bag isn't in the budget, the Neo-Gothic buildings
                         and fancy cars
-                        make it great for people-watching. At the end you get to the Maximilianeum, which is beautiful.</p>
+                        make it fun for people-watching. The street ends at the Maximilianeum, so walk all the way down.</p>
                 </li>
             </ul>
         </section>
@@ -269,7 +269,7 @@
                         <div class="map-popup">
                             <span class="map-popup-title">${loc.name}</span>
                             <div class="map-popup-buttons">
-                                <a href="#${loc.id}" class="map-btn map-btn-primary">👇 Scroll to details</a>
+                                ${document.getElementById(loc.id) ? `<a href="#${loc.id}" class="map-btn map-btn-primary">👇 Scroll to details</a>` : ''}
                                 <a href="${loc.gmaps}" target="_blank" class="map-btn map-btn-secondary">🗺️ View on Google Maps</a>
                             </div>
                         </div>
