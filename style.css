@@ -693,6 +693,15 @@ nav {
   display: inline-block;
 }
 
+.resume-sidebar ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.resume-sidebar li {
+  margin-bottom: 0.35rem;
+}
+
 .experience-item {
   margin-bottom: 2rem;
   padding: 2rem;
@@ -720,16 +729,33 @@ nav {
   margin-bottom: 0.5rem;
 }
 
+.experience-item h4:has(.exp-badge) {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem 0.6rem;
+  margin-bottom: 0.3rem;
+}
+
 .exp-badge {
   display: inline-block;
-  margin-left: 0.5rem;
   padding: 0.15rem 0.6rem;
   border-radius: 999px;
   font-size: 0.75rem;
-  font-weight: 600;
-  vertical-align: middle;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
   background: var(--secondary-color);
-  color: var(--white);
+  color: #0b2d23;
+}
+
+.resume-summary {
+  max-width: 760px;
+  margin: 0 auto 3rem;
+  text-align: center;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: var(--text-muted);
 }
 
 /* Travel Tips */
@@ -1484,6 +1510,16 @@ html {
 
     .hero {
       padding-bottom: 4rem;
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+
+    .hero-socials {
+      justify-content: center;
+    }
+
+    .hero-img-container {
+      max-width: 280px;
     }
 }
 @media print {
@@ -1722,6 +1758,18 @@ html {
   /* Hide standard titles */
   .section-title {
     display: none !important;
+  }
+
+  .resume-summary {
+    text-align: left !important;
+    font-size: 9pt !important;
+    margin-bottom: 0.8rem !important;
+  }
+
+  .exp-badge {
+    border: 1px solid black !important;
+    padding: 0 0.4rem !important;
+    font-size: 7pt !important;
   }
 }
 /* Footer Styles */
