@@ -1864,3 +1864,9 @@ footer a {
 [data-theme="dark"] .show-on-map:focus-visible {
   color: var(--bg-color);
 }
+
+/* Links inside the green page header use the header's text color */
+.guide-header .text-link {
+  color: inherit !important;
+  text-decoration: underline;
+}
