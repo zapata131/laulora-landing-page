@@ -720,6 +720,18 @@ nav {
   margin-bottom: 0.5rem;
 }
 
+.exp-badge {
+  display: inline-block;
+  margin-left: 0.5rem;
+  padding: 0.15rem 0.6rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  vertical-align: middle;
+  background: var(--secondary-color);
+  color: var(--white);
+}
+
 /* Travel Tips */
 .tips-grid {
   display: grid;
